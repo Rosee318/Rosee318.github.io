@@ -1,0 +1,109 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Saerom Lee (이새롬)
+    - name: Position
+      value: Associate Professor, School of Business Administration, Kyungpook National University
+    - name: Email
+      value: saeromlee@knu.ac.kr
+    - name: Office
+      value: +82-53-950-7392
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D. in Management Information Systems
+      institution: Seoul National University, Seoul, Korea
+      year: 2010 - 2016
+      description:
+        - "Dissertation: Three Essays of Governance on Open Source Software Project: Individual, Project, and Organizational Perspectives"
+        - "Advisor: Prof. Jungjoo Jahng"
+    - title: B.A. in International Trade (minor in Business Administration)
+      institution: Pusan National University, Busan, Korea
+      year: 2006 - 2010
+
+- title: Academic Appointments
+  type: time_table
+  contents:
+    - title: Associate Professor (Assistant → Associate)
+      institution: School of Business Administration, Kyungpook National University
+      year: 2018 - now
+    - title: Visiting Scholar
+      institution: Business School, University of Wisconsin–Madison, USA
+      year: 2017
+    - title: Lecturer
+      institution: Chung-Ang University / Hanyang University ERICA / Yanbian University of Science and Technology (China) / Seoul National University
+      year: 2015 - 2017
+
+- title: Entrepreneurship
+  type: time_table
+  contents:
+    - title: Founder
+      institution: Robocalix (로보칼릭스)
+      year: 2026 - now
+      description:
+        - "Founded June 30, 2026"
+
+- title: Professional Service
+  type: time_table
+  contents:
+    - title: Evaluation Committee, Public Data & Data-based Administration
+      institution: Ministry of the Interior and Safety (행정안전부)
+      year: 2026 - 2027
+    - title: Member, Sharing Promotion Committee
+      institution: Daegu Metropolitan City (대구광역시 공유촉진위원회)
+      year: 2026 - 2028
+    - title: Evaluation Committee, Public Data & Data-based Administration
+      institution: Ministry of the Interior and Safety (행정안전부)
+      year: 2025 - 2026
+    - title: Evaluation Committee, Public Data Provision & Operation
+      institution: Ministry of the Interior and Safety (행정안전부)
+      year: 2023 - 2024
+    - title: Human Rights Management Committee Member
+      institution: Daegu Opera House (대구오페라하우스)
+      year: 2022 - 2024
+    - title: Member, Proactive Administration Committee
+      institution: Korea Fair Trade Commission (공정거래위원회 적극행정위원회)
+      year: 2021 - 2023
+    - title: Evaluation Committee, Public Data Provision & Operation
+      institution: Ministry of the Interior and Safety (행정안전부)
+      year: 2021 - 2022
+    - title: Joint Evaluation Committee for Local Governments (12th–14th)
+      institution: Ministry of the Interior and Safety (행정안전부 지방자치단체 합동평가단)
+      year: 2019 - 2022
+
+- title: Editorial Service
+  type: list
+  contents:
+    - "Associate Editor (편집부위원장), Information Systems Review (경영정보학연구), Korea Society of Management Information Systems"
+    - "Associate Editor (East Asia), Asia Pacific Journal of Information Systems (APJIS), Korea Society of Management Information Systems"
+    - "Editorial Board Member, Knowledge Management Research (지식경영연구), Knowledge Management Society of Korea"
+    - "Editorial Board Member, Journal of Intelligence and Information Systems (지능정보연구, JIIS), Korea Intelligent Information Systems Society"
+    - "Editorial Board Member, Korean Management Science Review (경영과학), Korean Operations Research and Management Science Society (KORMS)"
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2024
+      items:
+        - Best Reviewer Award, Korean Operations Research and Management Science Society (한국경영과학회 『경영과학』 최우수 심사위원상)
+    - year: 2016
+      items:
+        - Best Paper Award, Korea Society of Management System (한국경영시스템학회)
+
+- title: Research Interests
+  type: list
+  contents:
+    - Open collaboration & Open Source Software (OSS)
+    - Social media analytics
+    - Online reviews and review helpfulness
+    - Cyberbullying & online sexual harassment
+    - Innovation performance
+    - AI-based services and user behavior
+
+- title: Teaching
+  type: list
+  contents:
+    - "Kyungpook National University: Business Data Analytics, Database Management, E-Commerce, IT Project Management (some in English)"
+    - "See the Teaching page for details."

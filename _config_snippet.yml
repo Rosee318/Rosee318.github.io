@@ -1,0 +1,31 @@
+# =====================================================================
+#  al-folio _config.yml 에서 이 값들만 바꾸면 됩니다.
+#  (전체 _config.yml 은 al-folio 템플릿 기본 파일을 그대로 쓰고,
+#   아래 항목만 찾아 수정하세요.)
+# =====================================================================
+
+# ---- 사이트 기본 정보 ----
+title: Saerom Lee
+first_name: Saerom
+middle_name:
+last_name: Lee
+email: saeromlee@knu.ac.kr
+description: Saerom Lee — Associate Professor, Kyungpook National University
+
+# ---- GitHub Pages 주소 ----
+url: https://rosee318.github.io
+baseurl: ""            # 저장소명을 rosee318.github.io 로 만들면 빈 문자열 그대로 두면 됩니다.
+
+# ---- 저자 이름 강조 (Publications 에서 본인 이름 볼드) ----
+scholar:
+  last_name: [Lee, 이새롬]
+  first_name: [Saerom, S.]
+
+# ---- 소셜/학술 링크 (있는 것만) ----
+scholar_userid: 1Ps8qlcAAAAJ   # Google Scholar user= 뒤의 ID
+orcid_id:
+linkedin_username:
+
+# ---- 네비게이션에 표시할 페이지 ----
+# 각 페이지의 nav: true / nav_order 로 이미 지정해 두었습니다.
+#   about(홈) / publications / cv / teaching / projects / students
