@@ -6,7 +6,7 @@ subtitle: Associate Professor, School of Business Administration, <a href="https
 
 profile:
   align: right
-  image: saerom_profile.png
+  image: saerom_profile_full.png
   image_circular: false
   more_info: >
     <p>School of Business Administration</p>
@@ -23,8 +23,8 @@ news: true
 <style>
 body {
   background-color: #ffffff;
-  background-image: url("{{ '/assets/img/home-technology-background.png' | relative_url }}");
-  background-position: center top;
+  background-image: url("{{ '/assets/img/home-technology-background-flipped.png' | relative_url }}");
+  background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
