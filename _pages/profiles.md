@@ -8,7 +8,7 @@ nav_order: 7
 
 profiles:
   - align: right
-    image: prof_pic.png
+    image: saerom_profile.png
     content: about_einstein.md
     image_circular: false # crops the image to make it circular
     more_info: >
