@@ -5,6 +5,7 @@ title: cv
 nav: true
 nav_order: 4
 cv_pdf:
+cv_format: jsonresume
 description: Full curriculum vitae and research record
 toc:
   sidebar: left

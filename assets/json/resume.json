@@ -1,221 +1,992 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
-    "image": "",
-    "email": "einstein@example.com",
-    "phone": "(912) 123-4567",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "name": "이새롬 / Saerom Lee",
+    "label": "Associate Professor, School of Business Administration, Kyungpook National University",
+    "image": "/assets/img/prof_pic.png",
+    "email": "saeromlee@knu.ac.kr",
+    "phone": "053-950-7392",
+    "summary": "Associate Professor in Management Information Systems at Kyungpook National University. Research interests include open collaboration, open source software, social media analytics, online reviews, cyberbullying and online sexual harassment, innovation performance, and AI-based services and user behavior.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "School of Business Administration, Kyungpook National University",
+      "postalCode": "",
+      "city": "Daegu",
+      "countryCode": "KR",
+      "region": "Republic of Korea"
     },
-    "profiles": []
+    "profiles": [
+      {
+        "network": "Google Scholar",
+        "username": "1Ps8qlcAAAAJ",
+        "url": "https://scholar.google.com/citations?user=1Ps8qlcAAAAJ"
+      }
+    ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Princeton University, NJ",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity", "Description 2."]
-    },
-    {
-      "name": "California Institute of Technology",
-      "position": "Visiting Professor",
-      "location": "Pasadena, California, US",
-      "startDate": "1933-01-01",
-      "endDate": "1933-01-01",
-      "summary": "",
-      "highlights": ["Description 1.", "Description 2."]
-    },
-    {
-      "name": "Kaiser Wilhelm Institute for Physics",
-      "position": "Director",
-      "location": "Berlin, Germany",
-      "startDate": "1917-01-01",
-      "endDate": "1933-01-01",
+      "name": "Kyungpook National University",
+      "position": "경북대학교 경영학부 조교수 · 부교수",
+      "location": "Korea",
+      "startDate": "2018-03-01",
+      "endDate": "",
       "summary": "",
       "highlights": []
     },
     {
-      "name": "Karl-Ferdinand University",
-      "position": "Professor of Theoretical Physics",
-      "location": "Prague, Czechoslovakia",
-      "startDate": "1911-01-01",
-      "endDate": "1917-01-01",
+      "name": "University of Wisconsin-Madison, Business School",
+      "position": "University of Wisconsin-Madison, Business School, Visiting Scholar",
+      "location": "Madison, WI, USA",
+      "startDate": "2017-06-01",
+      "endDate": "2017-08-01",
       "summary": "",
       "highlights": []
     },
     {
-      "name": "University of Zurich",
-      "position": "Associate Professor of Theoretical Physics",
-      "location": "Zurich, Switzerland",
-      "startDate": "1909-01-01",
-      "endDate": "1911-01-01",
+      "name": "Chung-Ang University",
+      "position": "중앙대학교 시간강사 (지식사회론)",
+      "location": "Korea",
+      "startDate": "2017-09-01",
+      "endDate": "2017-12-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "Hanyang University ERICA",
+      "position": "한양대학교 ERICA 시간강사 (사회연결망분석)",
+      "location": "Korea",
+      "startDate": "2016-09-01",
+      "endDate": "2016-12-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "Yanbian University of Science and Technology",
+      "position": "연변과학기술대학교(중국) 강의 (전자상거래체계, 영어강의)",
+      "location": "Korea",
+      "startDate": "2016-06-01",
+      "endDate": "2016-07-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "Seoul National University",
+      "position": "서울대학교 강의 (경영정보론)",
+      "location": "Korea",
+      "startDate": "2015-12-01",
+      "endDate": "2016-01-01",
       "summary": "",
       "highlights": []
     }
   ],
   "volunteer": [
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "organization": "Ministry of the Interior and Safety",
+      "location": "Korea",
+      "position": "행정안전부 2026년도 공공데이터 및 데이터기반행정 평가단 위원",
+      "startDate": "2026-06-01",
+      "endDate": "2027-05-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Daegu Metropolitan City",
+      "location": "Korea",
+      "position": "대구광역시 공유촉진위원회 위원",
+      "startDate": "2026-03-01",
+      "endDate": "2028-03-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Ministry of the Interior and Safety",
+      "location": "Korea",
+      "position": "행정안전부 2025년도 공공데이터 및 데이터기반행정 평가단 위원",
+      "startDate": "2025-06-01",
+      "endDate": "2026-05-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Ministry of the Interior and Safety",
+      "location": "Korea",
+      "position": "행정안전부 2023년도 공공데이터 제공 운영실태 평가단 위원",
+      "startDate": "2023-05-01",
+      "endDate": "2024-05-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Daegu Opera House",
+      "location": "Korea",
+      "position": "(재)대구오페라하우스 인권경영위원",
+      "startDate": "2022-04-01",
+      "endDate": "2024-04-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Korea Fair Trade Commission",
+      "location": "Korea",
+      "position": "공정거래위원회 적극행정위원회 위원",
+      "startDate": "2021-07-01",
+      "endDate": "2023-06-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Ministry of the Interior and Safety",
+      "location": "Korea",
+      "position": "행정안전부 2021년도 공공데이터 제공 운영실태 평가단 위원",
+      "startDate": "2021-05-01",
+      "endDate": "2022-04-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Ministry of the Interior and Safety",
+      "location": "Korea",
+      "position": "행정안전부 제14기 지방자치단체 합동평가단 위원",
+      "startDate": "2021-01-01",
+      "endDate": "2022-01-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Ministry of the Interior and Safety",
+      "location": "Korea",
+      "position": "행정안전부 제13기 지방자치단체 합동평가단 위원",
+      "startDate": "2020-02-01",
+      "endDate": "2021-02-01",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "organization": "Ministry of the Interior and Safety",
+      "location": "Korea",
+      "position": "행정안전부 제12기 지방자치단체 합동평가단 위원",
+      "startDate": "2019-03-01",
+      "endDate": "2020-03-01",
+      "summary": "",
+      "highlights": []
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Physics",
-      "studyType": "PhD",
-      "startDate": "1900-01-01",
-      "endDate": "1905-01-01",
-      "score": "",
-      "courses": ["Theory of Relativity"],
-      "highlights": ["Description 1.", "Description 2."]
-    },
-    {
-      "institution": "Eidgenössische Technische Hochschule",
-      "location": "Zurich, Switzerland",
-      "area": "Physics",
-      "studyType": "Federal teaching diploma",
-      "startDate": "1896-01-01",
-      "endDate": "1900-01-01",
+      "institution": "Seoul National University",
+      "location": "Seoul, Korea",
+      "area": "Management Information Systems",
+      "studyType": "Ph.D.",
+      "startDate": "2010-03-01",
+      "endDate": "2016-08-01",
       "score": "",
       "courses": [],
-      "highlights": ["Description 1.", "Description 2."]
+      "highlights": [
+        "학위논문: Three Essays of Governance on Open Source Software Project: Individual, Project, and Organizational Perspectives (지도교수: 장정주)"
+      ]
+    },
+    {
+      "institution": "Pusan National University",
+      "location": "Busan, Korea",
+      "area": "International Trade; minor in Business Administration",
+      "studyType": "B.A.",
+      "startDate": "2006-03-01",
+      "endDate": "2010-02-01",
+      "score": "",
+      "courses": [],
+      "highlights": [
+        "부산대학교 무역·국제학 학사 (경영학 부전공) / B.A., Pusan National University"
+      ]
     }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "최우수 심사위원상",
+      "date": "2024-11-01",
+      "awarder": "한국경영과학회 (『경영과학』지 2024년도 최우수 심사위원)",
+      "summary": "최우수 심사위원상, 한국경영과학회 (『경영과학』지 2024년도 최우수 심사위원)"
     },
     {
-      "title": "Max Planck Medal",
-      "date": "2029-01-01",
-      "awarder": "German Physical Society",
-      "summary": ""
+      "title": "우수논문상",
+      "date": "2016-04-01",
+      "awarder": "한국경영시스템학회 (논문: Revisiting the Relationship between Information Technology Capability and Firm Performance)",
+      "summary": "우수논문상, 한국경영시스템학회 (논문: Revisiting the Relationship between Information Technology Capability and Firm Performance)"
     }
   ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "icon": "fa-solid fa-envelope"
-    }
-  ],
+  "certificates": [],
   "publications": [
     {
-      "name": "Zur Elektrodynamik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+      "name": "Choi, Y., Lee, B., & Lee, S. (2026). Drivers of Multihoming in OTT Services: Parasocial Interaction and Technology-Enabled Flow. Asia Pacific Journal of Information Systems (APJIS).",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
     },
     {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
+      "name": "Baek, H., Ko, C., & Lee, S. (2026). Visual and Verbal Fit-Diagnostic Contextual Cues and Review Helpfulness in Online Apparel Reviews. Journal of Retailing and Consumer Services, 93.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
     },
     {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Lee, U., Lee, S., & Jahng, J. (2026). Who Is the Key Man in an Open Community? Based on Organizational Learning Theory with Structural Holes and Strength of Ties. Information and Software Technology, 198.  (교신저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Piao, Z., Lee, S., & Baek, H. (2025). Revealing consumer hearts - the impact of emotional appeals in movie marketing: evidence from marketer-generated content on Weibo. Entertainment Computing, 55.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2025-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Jang, M., Lee, S., & Baek, H. (2024). How the reviewer's historical ratings influence the review helpfulness?: Focus on the extremity and negativity. Industrial Management & Data Systems.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2024-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kwak, D. H., Kim, D., Lee, S., Kang, M., Park, S., & Knapp, D. (2024). The Effect of Blockability Affordance on Confrontation against Cyberbullying on Social Networking Sites. Internet Research.  (교신저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2024-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Baek, H., & Lee, S. (2024). How does live streaming impact media content consumption? The effect of game live streaming on game players. Entertainment Computing.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2024-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kang, Y., Lee, U., & Lee, S. (2024). Who Makes Popular Content? Information Cues from Content Creators for Users' Game Choice: Focusing on User-Created Content Platform \"Roblox\". Entertainment Computing, 50, 100697.  (교신저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2024-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Baek, H., & Kim, S. (2023). How people perceive malicious comments differently: factors influencing the perception of maliciousness in online news comments. Frontiers in Psychology, 14.  (제1저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2023-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Kang, M., & Kim, B. (2022). Factors Influencing Entrepreneurial Intention: Focusing on Individuals' Knowledge Exploration and Exploitation Activities. Journal of Open Innovation: Technology, Market, and Complexity.  (제1저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kwak, D. H., Nazareth, D., Lee, S., Lee, J., Polites, G., & Knapp, D. (2022). Effect of Charity Website Design on Perceived Consistency and its Consequences. Internet Research.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kwak, D. H., Lee, S., Xiao, M., Lee, J. U., Khansa, L., & Brandyberry, A. (2021). Announcement of Formal Controls as Phase-shifting Perceptions: Their Determinants and Moderating Role in the Context of Mobile Loafing. Internet Research.  (교신저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Baek, H., Lee, S., & Kim, S. (2021). Are female users equally active? An empirical study of the gender imbalance in Korean online news commenting. Telematics and Informatics, 62.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Lee, S., & Baek, H. (2020). Does the dispersion of online review ratings affect review helpfulness? Computers in Human Behavior, 117, 106670.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Baek, H., & Oh, S. (2020). The Role of Openness in Open Collaboration: A Focus on Open-Source Software Development Projects. ETRI Journal, 42(2), 196-204.  (제1저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Paek, H. J., Baek, H., Lee, S., & Hove, T. (2020). Electronic Cigarette Themes on Twitter: Dissemination Patterns and Relations with Online News and Search Engine Queries in South Korea. Health Communication, 35(1).",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Baek, J., Kim, B. K., & Lee, S. (2020). Alliance Management Capability as a Mediator between Organizational Culture, Alliance Experience, Alliance Learning Process, and Performance. Journal of Open Innovation: Technology, Market, and Complexity.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Ryu, M. H., & Lee, S. Y. (2019). How much are sellers willing to pay for the features offered by their e-commerce platform? Telecommunications Policy, 43(1).  (제1저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kwak, D. H., Ramamurthy, K., Nazareth, D., & Lee, S. (2018). The Moderating Role of Helper's High in Anchoring Process: An Empirical Investigation in the Context of Charity Website Design. Computers in Human Behavior, 84, 230-244.  (교신저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Park, Y. C., Kim, B. K., & Lee, S. (2018). The effects of alliance governance on knowledge acquisition and alliance performance of Korean firms. Asian Journal of Technology Innovation, 25(3), 428-446.",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Baek, H., & Jahng, J. (2017). Governance strategies for open collaboration: focusing on resource allocation in open source software development organizations. International Journal of Information Management, 37(5), 431-437.  (제1저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2017-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Darban, M., Kwak, D. H., Deng, S., Srite, M., & Lee, S. (2016). Antecedents and Consequences of Perceived Knowledge Update in the Context of an ERP Simulation Game: A Multi-Level Perspective. Computers & Education, 103, 87-98.  (교신저자)",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Baek, H., Lee, S., Oh, S., & Ahn, J. (2015). Normative Social Influence and Online Review Helpfulness: Polynomial Modeling and Response Surface Analysis. Journal of Electronic Commerce Research, 16(4).",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2015-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김준석, 박현선, 이새롬 (2026). Intention to Give Information for Vision-Based Smart Home Products: Based on the Privacy Calculus Model. 경영정보학연구.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김준석, 윤여훈, 김경민, 이새롬 (2026). Korean Disfluency Span Detection for AI-Based Presentation Feedback. 인터넷전자상거래연구.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김혜린, 이새롬, 우수한 (2026). Factors influencing purchase intention of products created by influencers: Based on the trust transfer theory. 경영학연구, 55(4).",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이광원, 이보람, 이새롬 (2026). 지방은행의 시중은행 전환을 위한 전략적 요인 탐색: 디지털 전환전략을 중심으로. 한국IT서비스학회지, 25(1).",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김준석, 이새롬, 박종화 (2025). 복합 낙상 시나리오 영상에서의 Transformer 모델 최적화 및 성능 평가. 경영학연구.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2025-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "한민정, 이새롬, 이광원 (2025). 숏폼 영상 중독에 영향을 미치는 요인 연구: 상대과정이론을 기반으로. 정보시스템연구, 34(2), 45-76.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2025-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김혜원, 김혜린, 이서현, 이새롬 (2024). 학령기 아동 모바일 의존에 영향을 미치는 부모의 심리적 특성 연구. 지식경영연구.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2024-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "장문경, 이새롬 (2024). OTT 플랫폼에서 연예인 관여도가 국가 이미지와 방문 의도에 미치는 영향: 원격 현장감과 준사회적 관계의 매개 역할을 중심으로. 정보시스템연구.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2024-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "배성훈, 이새롬, 백현미 (2024). 세 가지 차원의 리뷰어 경험이 리뷰 유용성에 미치는 영향: 온라인 게임 플랫폼 스팀을 중심으로. 경영학연구.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2024-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이보람, 김혜린, 이새롬 (2023). 양가적 감정이 신기술 기반 서비스 도입에 미치는 영향: 메타버스 서비스 제공자를 중심으로. 지식경영연구, 24(3), 149-172.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2023-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S. (2023). When in danger, who will help you? Two types of trust in technical coping on online platforms. 정보시스템연구.  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2023-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "임다은, 노유나, 이새롬, 장정주 (2022). Continuance Usage Intention on Subscription-based Streaming Service: Focusing on the Dedication-Constraint Model. 경영학연구, 51(6).",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "배성훈, 김현묵, 이의준, 이새롬 (2022). 온라인 게임 리뷰의 특성이 리뷰 유용성에 미치는 영향: 토픽모델링을 활용하여. 정보시스템연구, 31(4).",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이서현, 이새롬, 곽동헌 (2022). When do I Protect Myself? Avoidance Motivation toward Online Sexual Harassment on Social Media: A Study Based on Threat Avoidance Theory. 지식경영연구, 23(3).  (교신저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "장주혁, 백현미, 이새롬, 배성훈 (2022). 온라인 리뷰어의 과소보고 편향에 관한 실증 연구: 온라인 게임 플랫폼 스팀을 중심으로. 지식경영연구, 23(2).",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "백현미, 이새롬, 오세환, 장문경 (2021). What Leaders Really Do for Open Collaborations: Focusing on Open Source Software Development Projects. 경영학연구, 50(3).  (교신저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "강민정, 이새롬, 김병근 (2021). 예비창업가의 열정이 창업의도에 미치는 영향. 벤처창업연구, 16(4), 71-84.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "장문경, 이새롬, 백현미, 정윤혁 (2021). Do Not Just Talk, Show Me in Action: Investigating the Effect of OSSD Activities on Job Change of IT Professional. The Journal of Society for e-Business Studies, 26(1).  (교신저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "원형식, 장주혁, 이새롬, 이환우 (2021). 한국 채용 시장에서 4년제 대학졸업자의 취업결정 요인: 입사지원자의 실천지능 관점에서. 한일경상논집, 29.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미, 이의준 (2020). 국가별 오픈소스 소프트웨어 개발자의 네트워크 특성이 개방형 협업 성과에 미치는 영향: 약한연결 이론을 중심으로. 정보시스템연구, 29(2), 149-171.  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이의준, 원형식, 이새롬 (2020). 숙박공유 플랫폼 서비스의 서비스 공급자 특성이 사용자의 만족감에 미치는 영향: 에어비앤비(Airbnb) 호스트 주체를 중심으로. 정보시스템연구, 29(1), 1-22.  (교신저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 류민호 (2019). AHP를 활용한 탈통신 비즈니스 전략 탐색. 한국혁신학회지, 14(2), 269-299.  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "백현미, 이새롬, 백혜진 (2019). 광고성 트윗과 비광고성 트윗의 확산 특성 비교 연구: 전자담배 트윗을 중심으로. 정보사회와 미디어, 20(1).  (교신저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미, 장문경 (2019). 개방형 협업 커뮤니케이션 특성과 협업 성과: 오픈소스 소프트웨어 개발을 중심으로. 정보시스템연구, 28(1), 73-96.  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이환우, 이새롬, 정경철 (2019). 채용 전형에서 인공지능 기술 도입이 입사 지원의도에 미치는 영향. 정보시스템연구, 28(2), 1-22.  (교신저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "백현미, 이새롬 (2018). 집단주의와 개인주의 문화에 따른 개방형 협업 지식공유 활동 비교 연구: 오픈소스 소프트웨어 프로젝트 개발자를 중심으로. 지식경영연구, 19(2), 133-150.  (교신저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "구경모, 백현미, 이새롬 (2018). 개방형협업 참여자의 지식창출·지식공유 구조와 혁신 성과: 오픈소스 소프트웨어 개발 커뮤니티를 중심으로. 지식경영연구, 18(4).",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장정주, 백현미 (2017). 개방적 협업에 있어서 지식의 활용(Exploitation)과 탐색(Exploration)이 성과에 미치는 영향: 오픈소스 소프트웨어 개발 프로젝트를 중심으로. 지식경영연구, 18(2).  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2017-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장정주, 백현미 (2016). Role of Project Owner in OSS Project: Based on Impression Formation and Social Capital Theory. The Journal of Society for e-Business Studies, 21(2), 23-46.  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장정주 (2016). Strategy for Sustainable Growth through Forming Network in Mobile Service Industry: Focusing on Stock-Swapping M&A Strategy of YelloMobile. 벤처창업연구(Asia-Pacific Journal of Business Venturing and Entrepreneurship), 11(1), 109-119.  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "오세환, 백현미, 이새롬 (2016). Revisiting the Relationship between Information Technology Capability and Firm Performance: Focusing on the Impact of the Adoption of Enterprise Resource Planning Systems. The Journal of Information Systems, 25(1), 49-73.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장정주 (2015). The Diffusion of Internet of Things: Forecasting Technologies and Company Strategies using Qualitative and Quantitative Approach. The Journal of Society for e-Business Studies, 20(4), 19-39.  (제1저자)",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2015-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "박진성, 서진호, 이새롬 (2012). Information Systems Adoption in Faurecia: Business Process Changes and Cultural Difference. 서울대학교 경영연구소 경영사례 시리즈 25.",
+      "publisher": "Other Papers and Case Studies",
+      "releaseDate": "2012-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장정주. How to Understand and Prepare New Paradigm of Link. 經營情報論叢, 25(1).",
+      "publisher": "Other Papers and Case Studies",
+      "releaseDate": "",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "송신근, 장정주, 이새롬. The Impact of Enterprise Systems on Technostress of Users. 經營情報論叢, 23(1).",
+      "publisher": "Other Papers and Case Studies",
+      "releaseDate": "",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장정주. Social Strategy: Creating Profit Through Relationship. 經營情報論叢, 22(1).",
+      "publisher": "Other Papers and Case Studies",
+      "releaseDate": "",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "박진성, 최문정, 이새롬 (2010). Technician or Leader? - A Review of the Evolving Role of the CIO. 勞使關係硏究, 20, 157-179.",
+      "publisher": "Other Papers and Case Studies",
+      "releaseDate": "2010-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kim, D., Kang, M., Lee, S., Wu, J., & Kwak, D. H. (2022). Social Desirability Bias in Cyberbullying Research. International Association for Computer Information Systems (IACIS).",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kwak, D. H., Knapp, D. E., Lee, S., & Kang, M. (2021). Effect of Blockability on Confrontation Against SNS Bullying. KrAIS post-ICIS.",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Kwak, D., Ma, X., Tu, Y., & Khansa, L. (2019). Announcement of Formal Control as a Phase-shifting Perception and its Moderating Role in the Context of Mobile-loafing. 27th European Conference on Information Systems (ECIS).",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Letheren, K., Lee, S., Kwak, D. H., & Ramamurthy, K. (2018). Effects of Gendered Anthropomorphism and Image Appeal on Moral Norms in the Context of Charity Website Design. PACIS.",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Ryu, M. H., Lee, S. Y., & Kwak, D. H. (2018). Where do you sell your products online? A seller perspective on online shopping platforms. ITS Seoul 2018.",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., Lim, D. E., & Jahng, J. (2015). Qualitative and Quantitative Approach in Forecasting Emerging Technologies: Internet of Things. Post-ICIS 2015, LG CNS/KrAIS Workshop, Texas, USA.",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2015-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Oh, S., Baek, H., & Lee, S. (2015). Reinvestigating the Relationship between Information Technology Capability and Firm Performance: Focusing on the Impact of the Adoption of Enterprise Systems. 19th PACIS, Singapore.",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2015-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., & Jahng, J. (2013). Tense Moods Make You Use Habitually Facebook: A New Framework for Habitual IT Use based on the Mechanisms of Mood Regulation. 19th Americas Conference on Information Systems (AMCIS), Chicago, USA.",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2013-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Lee, S., & Jahng, J. (2012). Identification of Factors Affecting Habitual IS Use. Post-ICIS 2012, LG CNS/KrAIS Workshop, Orlando, USA.",
+      "publisher": "International Conference Proceedings",
+      "releaseDate": "2012-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "권보람, 이새롬, 김판수 (2026). 청년층 뉴스레퍼토리의 잠재프로파일 분석: 디지털 플랫폼 기반 이용 양상을 중심으로. 경영정보 통합 춘계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김준석, 이새롬, 박종화 (2025). Vision Transformer 기반 낙상 감지 모델: 대규모 실환경 데이터를 기반으로. 2025 경영정보 관련 학회 춘계 통합학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2025-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 이보람, 이민철 (2022). 메타버스 기술 기반 서비스 도입에 대한 은행의 대처 전략: 양가적 감정을 중심으로. 2022 한국경영정보학회 추계 학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "배성훈, 이새롬 (2022). 리뷰전문성이 리뷰유용성에 미치는 영향: 리뷰 경험을 기반한 전문성을 중심으로. 한국전략마케팅학회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김혜린, 이서현, 이새롬 (2022). 영유아의 모바일 영상 소비 결정에 영향을 미치는 요인. 한국전략마케팅학회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2022-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 곽동헌 (2021). 온라인 성희롱에 대한 보호 동기 요인: 인스타그램의 성애화(sexualization) 환경을 중심으로. 정보시스템학회 추계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "배성훈, 이새롬, 백현미 (2021). 온라인 리뷰 유용성(review helpfulness)에 영향을 미치는 리뷰어 전문성의 특성: 온라인 게임 플랫폼 스팀 리뷰를 중심으로. 2021 경영정보관련 춘계통합학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "장문경, 백현미, 이새롬 (2021). 리뷰어의 과거리뷰 작성행동이 리뷰 유용성에 미치는 영향에 대한 연구. 한국정보기술응용학회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이의준, 이새롬, 백현미, 장주혁 (2021). Investigation on the User Engagement with YouTube Comments Using Topic Modeling. 제4차 SSK 네트워킹 합동 심포지엄.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "배성훈, 이새롬, 백현미 (2021). 온라인 리뷰 유용성에 영향을 미치는 리뷰어의 전문성: 게임 플랫폼 스팀을 중심으로. 정보사회학회 추계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "장주혁, 백현미, 이새롬, 배성훈 (2021). 온라인 리뷰에서 과소 보고 성향을 띄는 리뷰어에 대한 실증적인 분석 - Steampowered.com 플랫폼을 통하여. 정보시스템학회 추계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김현묵, 이의준, 배성훈, 이새롬 (2021). 온라인 게임 플랫폼의 얼리 액세스 전략: 게임 리뷰 토픽 모델링을 중심으로. 정보시스템학회 추계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2021-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이환우, 이새롬, 정경철 (2019). 인공지능 기술을 적용한 채용 프로세스와 지원자의 특성이 기업지원 의도에 미치는 영향. 2019 경영정보관련 춘계 통합학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "Kwak, D. H., Lee, S., Kim, J. Y., & Ramamurthy, K. (2019). What Motivates Potential Donors to Evaluate IS Success of Charity Websites? 2019 경영정보관련 춘계 통합학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2019-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 임다은, 장정주 (2018). Determinants of Continuance Intention in Music Streaming Services: A Dual-Model Perspective. IT서비스학회 추계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미, 백혜진 (2018). 소셜 미디어 내의 홍보성 글과 비홍보성 글의 특성 비교 분석: 전자담배 관련 트윗에 대한 탐색적 연구. 경영정보 관련 춘계 통합학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미 (2018). 문화 차이에 따른 지식기여: 오픈소스 소프트웨어 프로젝트를 중심으로. 한국정보사회학회 춘계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미 (2017). 온라인 커뮤니티에서 개방형협업 거버넌스에 관한 연구: 오픈소스 프로젝트 운영자의 역할을 중심으로. 한국정보사회학회 추계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2017-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장민경, 백현미 (2017). Invisible Reward of Participating in OSSD Project: Evidence from Career Changes of Developers in Github.com. 한국정보사회학회 춘계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2017-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미, 장정주 (2016). 개방적 협업에 있어서 리더의 특성이 성과에 미치는 영향: 오픈소스 소프트웨어 프로젝트 운영자의 인상형성을 중심으로. 정보시스템학회 추계 학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미, 장정주 (2016). 개방적 협업에 있어서 지식의 활용(Exploitation)과 탐색(Exploration)이 성과에 미치는 영향: 오픈소스 소프트웨어 개발 프로젝트를 중심으로. 경영정보학회 추계 학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미, 장정주 (2016). Innovation Performance of OSS Project Development Organizations: Individual, Project, and Organization Level Analysis. 한국정보사회학회 하계학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "백현미, 이새롬, 백혜진, 양지혜 (2016). 빅데이터 분석을 통한 전자담배 관련 여론의 동향 연구: 담뱃값 인상 이슈를 중심으로. 한국헬스커뮤니케이션학회 2016 전기학술대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2016-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 장정주 (2014). 사물인터넷 사용에 따른 삶의 변화: 델파이 기법을 이용한 미래 예측. 한국인터넷정보학회 춘계학술발표대회.",
+      "publisher": "Domestic Conference Proceedings",
+      "releaseDate": "2014-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김성철 외 (공저) (2020). 인터넷 생태계 진단. 고려대학교 출판문화원.",
+      "publisher": "Books",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김상현 외 (공저) (2020). 핀테크와 금융혁신. 홍릉과학출판사.",
+      "publisher": "Books",
+      "releaseDate": "2020-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 도현명 (공저) (2018). 젊은 소셜벤처에게 묻다 - 어떻게 비즈니스로 세상을 바꾸는가. 남해의 봄날.",
+      "publisher": "Books",
+      "releaseDate": "2018-01-01",
+      "url": "",
+      "summary": ""
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
+      "name": "Research Interests",
+      "level": "",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "개방형 협업(Open Collaboration)",
+        "오픈소스 소프트웨어(OSS)",
+        "소셜미디어 분석(Social Media Analytics)",
+        "온라인 리뷰 및 리뷰 유용성",
+        "사이버불링",
+        "온라인 성희롱",
+        "혁신 성과(Innovation Performance)",
+        "AI 기반 서비스 및 사용자 행동"
       ]
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
+      "language": "Korean",
+      "fluency": "Native"
     },
     {
       "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
+      "fluency": "Professional"
     }
   ],
   "interests": [
     {
-      "name": "Physics",
+      "name": "Teaching",
       "icon": "fa-solid fa-tag",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "경북대학교: 경영데이터분석, 데이터베이스 관리(Database Management), 전자상거래, IT Project Management (일부 영어강의)",
+        "이전 출강: 중앙대학교(지식사회론), 한양대학교 ERICA(사회연결망분석), 연변과학기술대학교(전자상거래체계), 서울대학교(경영정보론)"
       ]
     }
   ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
-    },
-    {
-      "name": "Professor Jane Smith",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit."
-    }
-  ],
+  "references": [],
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01"
+      "name": "지능정보기술의 영향과 사회적 대응 (SSK), 한국연구재단 — 참여연구자",
+      "summary": "지능정보기술의 영향과 사회적 대응 (SSK), 한국연구재단 — 참여연구자",
+      "highlights": [],
+      "startDate": "2019-09-01",
+      "endDate": "2023-08-01"
+    },
+    {
+      "name": "신진연구자 지원사업, 한국연구재단 — 책임연구자",
+      "summary": "신진연구자 지원사업, 한국연구재단 — 책임연구자",
+      "highlights": [],
+      "startDate": "2019-05-01",
+      "endDate": ""
+    },
+    {
+      "name": "빅데이터 분석 및 경진대회 사업, 대구디지털산업진흥원 — 참여연구자",
+      "summary": "빅데이터 분석 및 경진대회 사업, 대구디지털산업진흥원 — 참여연구자",
+      "highlights": [],
+      "startDate": "2019-03-01",
+      "endDate": "2019-12-01"
+    },
+    {
+      "name": "BK21 플러스, 한국연구재단 — 참여연구자",
+      "summary": "BK21 플러스, 한국연구재단 — 참여연구자",
+      "highlights": [],
+      "startDate": "2018-09-01",
+      "endDate": ""
+    },
+    {
+      "name": "ICT 융합 생태계에서의 탈통신 비즈니스 전략 및 新성과지표 연구, ETRI — 참여연구자",
+      "summary": "ICT 융합 생태계에서의 탈통신 비즈니스 전략 및 新성과지표 연구, ETRI — 참여연구자",
+      "highlights": [],
+      "startDate": "2017-06-01",
+      "endDate": "2018-10-01"
+    },
+    {
+      "name": "네이버 무료 플랫폼이 중소상공인에게 제공하는 가치 분석, Naver — 참여연구자",
+      "summary": "네이버 무료 플랫폼이 중소상공인에게 제공하는 가치 분석, Naver — 참여연구자",
+      "highlights": [],
+      "startDate": "2017-10-01",
+      "endDate": "2018-07-01"
+    },
+    {
+      "name": "학문후속세대(시간강사 지원), 한국연구재단 — 책임연구자",
+      "summary": "학문후속세대(시간강사 지원), 한국연구재단 — 책임연구자",
+      "highlights": [],
+      "startDate": "2017-09-01",
+      "endDate": "2018-08-01"
+    },
+    {
+      "name": "삼성전자-서울대 스마트 캠퍼스 프로젝트, 삼성전자 — 참여연구원",
+      "summary": "삼성전자-서울대 스마트 캠퍼스 프로젝트, 삼성전자 — 참여연구원",
+      "highlights": [],
+      "startDate": "2016-05-01",
+      "endDate": "2017-04-01"
+    },
+    {
+      "name": "ETRI ICT R&D 정책·기술예측 연구 다수, ETRI — 참여연구원",
+      "summary": "ETRI ICT R&D 정책·기술예측 연구 다수, ETRI — 참여연구원",
+      "highlights": [],
+      "startDate": "2013-01-01",
+      "endDate": "2016-01-01"
     }
   ]
 }
