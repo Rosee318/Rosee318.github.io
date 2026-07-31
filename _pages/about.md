@@ -21,6 +21,18 @@ news: true
 ---
 
 <style>
+:root {
+  --global-code-bg-color: rgba(22, 138, 173, 0.08);
+  --global-theme-color: #168aad;
+  --global-hover-color: #0f7898;
+}
+
+html[data-theme="dark"] {
+  --global-code-bg-color: #223640;
+  --global-theme-color: #35b8d0;
+  --global-hover-color: #4ecfe4;
+}
+
 body {
   background-color: #ffffff;
   background-image: url("{{ '/assets/img/home-technology-background-flipped.png' | relative_url }}");
@@ -28,6 +40,18 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+@media (min-width: 576px) {
+  .profile {
+    width: 36%;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile {
+    width: 38%;
+  }
 }
 
 @media (max-width: 576px) {

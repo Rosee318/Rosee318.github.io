@@ -7,6 +7,20 @@ nav: true
 nav_order: 7
 ---
 
+<style>
+:root {
+  --global-code-bg-color: rgba(22, 138, 173, 0.08);
+  --global-theme-color: #168aad;
+  --global-hover-color: #0f7898;
+}
+
+html[data-theme="dark"] {
+  --global-code-bg-color: #223640;
+  --global-theme-color: #35b8d0;
+  --global-hover-color: #4ecfe4;
+}
+</style>
+
 Master's graduates and advisees, with links to their own profiles (each student maintains their own page).
 
 ## Alumni
