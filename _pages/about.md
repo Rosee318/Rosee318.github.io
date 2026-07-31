@@ -20,6 +20,62 @@ social: true
 news: true
 ---
 
+<style>
+body {
+  background-color: #050609;
+  background-image: url("{{ '/assets/img/home-computer-background.png' | relative_url }}");
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body > header .navbar {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(10px);
+}
+
+body > .container[role="main"] {
+  max-width: min(930px, calc(100vw - 32px));
+  margin-top: 6.5rem !important;
+  margin-bottom: 6rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+}
+
+body footer.fixed-bottom {
+  background-color: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(10px);
+}
+
+html[data-theme="dark"] body > header .navbar,
+html[data-theme="dark"] body footer.fixed-bottom {
+  background-color: rgba(12, 14, 18, 0.88) !important;
+}
+
+html[data-theme="dark"] body > .container[role="main"] {
+  border-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(15, 17, 22, 0.88);
+}
+
+@media (max-width: 576px) {
+  body {
+    background-position: center top;
+    background-attachment: scroll;
+  }
+
+  body > .container[role="main"] {
+    margin-top: 5.25rem !important;
+    margin-bottom: 5rem;
+    padding: 1.15rem;
+    border-radius: 14px;
+  }
+}
+</style>
+
 I am an Associate Professor in the School of Business Administration at [Kyungpook National University](https://biz.knu.ac.kr/), where I teach and research in Management Information Systems (MIS). I received my Ph.D. in Management Information Systems from Seoul National University.
 
 My research focuses on **open collaboration and open source software (OSS)**, **social media analytics**, **online reviews and review helpfulness**, **cyberbullying and online sexual harassment**, innovation performance, and **AI-based services and user behavior**. My work has appeared in outlets such as *Computers in Human Behavior*, *International Journal of Information Management*, *Internet Research*, *Telecommunications Policy*, *Health Communication*, and *Computers & Education*.
