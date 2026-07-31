@@ -25,13 +25,25 @@ jobs:
       - name: Install RenderCV
         run: |
           pip install -r requirements.txt
-      - name: RenderCV
+      - name: Detect RenderCV input
+        id: rendercv_input
         run: |
           cv_file=$(find _data  -maxdepth 1 -type f \( -name "cv.yaml" -o -name "cv.yml" \))
           if [ -z "$cv_file" ]; then
             echo "No cv.yml file found!"
             exit 1
           fi
+          if grep -Eq "^[[:space:]]*-" "$cv_file"; then
+            echo "$cv_file uses the al-folio CV format, not RenderCV. Skipping RenderCV."
+            echo "should_render=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "cv_file=$cv_file" >> "$GITHUB_OUTPUT"
+          echo "should_render=true" >> "$GITHUB_OUTPUT"
+      - name: RenderCV
+        if: steps.rendercv_input.outputs.should_render == 'true'
+        run: |
+          cv_file="${{ steps.rendercv_input.outputs.cv_file }}"
           rendercv_dir=$(find assets -maxdepth 1 -type d -name "rendercv")
           if [ -z "$rendercv_dir" ]; then
             echo "No RenderCV config directory found!"
@@ -45,14 +57,20 @@ jobs:
           rendercv render $cv_file --settings $settings
           rm assets/rendercv/rendercv_output/*.typ
       - name: Upload rendercv_output as an artifact
+        if: steps.rendercv_input.outputs.should_render == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: RenderCV Output
           path: assets/rendercv/rendercv_output
       - name: Push the changes
+        if: steps.rendercv_input.outputs.should_render == 'true'
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git add -A
-          git commit -m "chore: render the latest CV"
-          git push
+          if git diff --cached --quiet; then
+            echo "No RenderCV output changes to commit."
+          else
+            git commit -m "chore: render the latest CV"
+            git push
+          fi
