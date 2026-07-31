@@ -20,6 +20,24 @@ social: true
 news: true
 ---
 
+<style>
+body {
+  background-color: #ffffff;
+  background-image: url("{{ '/assets/img/home-technology-background.png' | relative_url }}");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@media (max-width: 576px) {
+  body {
+    background-position: center top;
+    background-attachment: scroll;
+  }
+}
+</style>
+
 I am an Associate Professor in the School of Business Administration at [Kyungpook National University](https://biz.knu.ac.kr/), where I teach and research in Management Information Systems (MIS). I received my Ph.D. in Management Information Systems from Seoul National University.
 
 My research focuses on **open collaboration and open source software (OSS)**, **social media analytics**, **online reviews and review helpfulness**, **cyberbullying and online sexual harassment**, innovation performance, and **AI-based services and user behavior**. My work has appeared in outlets such as *Computers in Human Behavior*, *International Journal of Information Management*, *Internet Research*, *Telecommunications Policy*, *Health Communication*, and *Computers & Education*.
