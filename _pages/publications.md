@@ -15,6 +15,16 @@ nav_order: 3
 
 <div class="publications">
 
-{% bibliography %}
+<h2 class="bibliography">논문</h2>
+
+{% bibliography --query @article %}
+
+<h2 class="bibliography">학회</h2>
+
+{% bibliography --query @inproceedings %}
+
+<h2 class="bibliography">저서</h2>
+
+{% bibliography --query @book %}
 
 </div>
