@@ -188,20 +188,7 @@
       ]
     }
   ],
-  "awards": [
-    {
-      "title": "최우수 심사위원상",
-      "date": "2024-11-01",
-      "awarder": "한국경영과학회 (『경영과학』지 2024년도 최우수 심사위원)",
-      "summary": "최우수 심사위원상, 한국경영과학회 (『경영과학』지 2024년도 최우수 심사위원)"
-    },
-    {
-      "title": "우수논문상",
-      "date": "2016-04-01",
-      "awarder": "한국경영시스템학회 (논문: Revisiting the Relationship between Information Technology Capability and Firm Performance)",
-      "summary": "우수논문상, 한국경영시스템학회 (논문: Revisiting the Relationship between Information Technology Capability and Firm Performance)"
-    }
-  ],
+  "awards": [],
   "certificates": [],
   "publications": [
     {
