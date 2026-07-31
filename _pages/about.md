@@ -6,28 +6,26 @@ subtitle: Associate Professor, School of Business Administration, <a href="https
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   image_circular: false
   more_info: >
     <p>School of Business Administration</p>
     <p>Kyungpook National University</p>
     <p>Daegu, Republic of Korea</p>
     <p>saeromlee@knu.ac.kr</p>
+    <p>053-950-7392</p>
 
-selected_papers: true # includes bib entries with "selected={true}"
+selected_papers: false
 social: true
 news: true
 ---
 
 I am an Associate Professor in the School of Business Administration at [Kyungpook National University](https://biz.knu.ac.kr/), where I teach and research in Management Information Systems (MIS). I received my Ph.D. in Management Information Systems from Seoul National University.
 
-My research focuses on **open collaboration and open source software (OSS)**, **social media analytics**, **online reviews and review helpfulness**, **cyberbullying and online sexual harassment**, and **AI-based services and user behavior**. My work has appeared in outlets such as *Computers in Human Behavior*, *International Journal of Information Management*, *Internet Research*, *Telecommunications Policy*, *Health Communication*, and *Computers & Education*.
+My research focuses on **open collaboration and open source software (OSS)**, **social media analytics**, **online reviews and review helpfulness**, **cyberbullying and online sexual harassment**, innovation performance, and **AI-based services and user behavior**. My work has appeared in outlets such as *Computers in Human Behavior*, *International Journal of Information Management*, *Internet Research*, *Telecommunications Policy*, *Health Communication*, and *Computers & Education*.
 
 In 2026, I founded the startup **Robocalix (로보칼릭스)**.
 
-이새롬 — 경북대학교 경영학부 부교수. 개방형 협업·오픈소스 소프트웨어, 소셜미디어 분석, 온라인 리뷰, 사이버불링 등을 연구합니다. 2026년 스타트업 로보칼릭스를 창업했습니다.
+이새롬은 경북대학교 경상대학 경영학부 부교수입니다. 개방형 협업과 오픈소스 소프트웨어, 소셜미디어 분석, 온라인 리뷰 및 리뷰 유용성, 사이버불링과 온라인 성희롱, 혁신 성과, AI 기반 서비스와 사용자 행동을 연구합니다.
 
-<!--
-  프로필 사진: assets/img/prof_pic.jpg 에 넣으세요.
-  대표논문은 papers.bib 에서 selected={true} 로 지정된 항목이 위에 자동 표시됩니다.
--->
+The full publication record is available on the [Publications](/publications/) page, and the complete career record from the supplied CV is available on the [CV](/cv/) page.
