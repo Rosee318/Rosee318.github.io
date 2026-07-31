@@ -68,20 +68,22 @@ html[data-theme="dark"] {
 }
 
 .member-card h3 {
-  align-items: baseline;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
+  font-size: 1.45rem;
+  line-height: 1.2;
 }
 
 .member-cv-link {
+  align-items: center;
   border: 1px solid rgba(22, 138, 173, 0.34);
   border-radius: 999px;
+  display: inline-flex;
   font-size: 0.76rem;
   font-weight: 700;
   line-height: 1;
+  margin-left: 0.35rem;
   padding: 0.28rem 0.52rem;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .member-grid,
