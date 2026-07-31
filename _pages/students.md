@@ -67,6 +67,23 @@ html[data-theme="dark"] {
   margin-top: 0;
 }
 
+.member-card h3 {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.member-cv-link {
+  border: 1px solid rgba(22, 138, 173, 0.34);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.28rem 0.52rem;
+  text-transform: uppercase;
+}
+
 .member-grid,
 .media-grid {
   display: grid;
@@ -145,7 +162,10 @@ html[data-theme="dark"] {
 
   <section class="member-card">
     <div class="member-label">Alumni</div>
-    <h3>이혜원 / Hyewon Lee</h3>
+    <h3>
+      이혜원 / Hyewon Lee
+      <a class="member-cv-link" href="{{ '/assets/pdf/hyewon_lee_cv.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a>
+    </h3>
     <p>M.S. in Information Systems, Kyungpook National University (2023-2025). Currently Ph.D. student in Information Systems, Kent State University (2025-).</p>
     <p><a href="mailto:hlee63@kent.edu">hlee63@kent.edu</a></p>
   </section>
