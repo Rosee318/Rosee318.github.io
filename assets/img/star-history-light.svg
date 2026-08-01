@@ -2,8 +2,8 @@
   <title>Star history for alshedivat/al-folio</title>
   <defs>
     <linearGradient id="fill-light" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="rgba(181,9,172,0.28)" />
-      <stop offset="100%" stop-color="rgba(181,9,172,0.02)" />
+      <stop offset="0%" stop-color="rgba(37,99,235,0.28)" />
+      <stop offset="100%" stop-color="rgba(37,99,235,0.02)" />
     </linearGradient>
     <clipPath id="plot-light">
       <rect x="68" y="64" width="724" height="308" />

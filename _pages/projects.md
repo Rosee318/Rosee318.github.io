@@ -1,9 +1,9 @@
 ---
 layout: page
 permalink: /projects/
-title: projects
+title: Projects
 description: Research grants and funded projects.
-nav: true
+nav: false
 nav_order: 6
 ---
 

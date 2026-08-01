@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: Teaching
 description: Courses taught at Kyungpook National University and beyond.
 nav: true
-nav_order: 5
+nav_order: 4
 ---
 
 <style>

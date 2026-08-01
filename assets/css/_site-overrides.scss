@@ -1,23 +1,29 @@
 :root {
-  --global-code-bg-color: rgba(22, 138, 173, 0.08);
-  --global-theme-color: #168aad;
-  --global-hover-color: #0f7898;
+  --global-code-bg-color: rgba(37, 99, 235, 0.08);
+  --global-theme-color: #2563eb;
+  --global-hover-color: #0f4fd1;
+  --sail-deep-navy: #081a33;
+  --sail-navy: #0f2f5f;
+  --sail-royal: #2563eb;
+  --sail-cobalt: #1d4ed8;
+  --sail-sky: #7dd3fc;
+  --sail-teal: #0891b2;
+  --sail-blue-violet: #4f46e5;
+  --sail-cool-gray: #64748b;
+  --sail-soft-blue: #f4f8ff;
 }
 
 html[data-theme="dark"] {
-  --global-code-bg-color: #223640;
-  --global-theme-color: #35b8d0;
-  --global-hover-color: #4ecfe4;
+  --global-code-bg-color: rgba(125, 211, 252, 0.16);
+  --global-theme-color: #7dd3fc;
+  --global-hover-color: #38bdf8;
 }
 
-@media (min-width: 576px) {
-  .profile {
-    width: 36%;
-  }
+body {
+  background: var(--global-bg-color);
 }
 
-@media (min-width: 992px) {
-  .profile {
-    width: 38%;
-  }
+a,
+a:hover {
+  color: var(--global-theme-color);
 }

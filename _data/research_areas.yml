@@ -1,0 +1,39 @@
+- name: Human-Centered AI
+  short: Human
+  accent: "#2563eb"
+  icon: person
+  description: "Understanding people and designing trustworthy AI that supports better decisions and experiences."
+  keywords:
+    - AI Trust & Adoption
+    - Human-AI Collaboration
+    - Decision Support & AI Feedback
+
+- name: Digital Platforms
+  short: Platform
+  accent: "#4f46e5"
+  icon: platform
+  description: "Analyzing behaviors and interactions in digital platforms and online communities."
+  keywords:
+    - Online Reviews & eWOM
+    - Social Media & Communities
+    - Consumer Behavior & Loyalty
+
+- name: Intelligent Information Systems
+  short: Information
+  accent: "#0891b2"
+  icon: data
+  description: "Building data-driven systems and intelligent analytics for better organizational and societal outcomes."
+  keywords:
+    - Data Analytics & Big Data
+    - LLMs & Machine Learning
+    - Business Intelligence
+
+- name: Digital Innovation
+  short: Innovation
+  accent: "#1d4ed8"
+  icon: innovation
+  description: "Exploring innovation strategies and emerging technologies to create impact and drive transformation."
+  keywords:
+    - Open Innovation
+    - Digital Transformation
+    - Technology Strategy
