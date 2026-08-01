@@ -81,7 +81,7 @@ nav_order: 5
 }
 </style>
 
-<p class="media-news-intro">Selected media coverage, interviews, videos, and featured news related to SAIL Lab members and collaborators.</p>
+<p class="media-news-intro">Selected media coverage, interviews, videos, and featured news related to Smart AI & Innovation Lab members and collaborators.</p>
 
 {% for person in people %}
 {% assign entries = site.data.media | where: "person", person %}

@@ -2,7 +2,7 @@
 layout: page
 permalink: /contact/
 title: Contact
-description: Contact information for SAIL Lab.
+description: "Contact information for Smart AI & Innovation Lab."
 nav: true
 nav_order: 7
 ---
@@ -49,8 +49,8 @@ nav_order: 7
 </style>
 
 <section class="contact-panel">
-  <h2>SAIL Lab</h2>
-  <p>Smart AI & Innovation Lab, Kyungpook National University</p>
+  <h2>Smart AI & Innovation Lab</h2>
+  <p>SAIL, Kyungpook National University</p>
   <div class="contact-list">
     <div class="contact-item">
       <strong>Address</strong>

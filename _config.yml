@@ -2,16 +2,16 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: SAIL Lab # the website title (if blank, full name will be used instead)
-first_name: SAIL
+title: "Smart AI & Innovation Lab" # the website title (if blank, full name will be used instead)
+first_name: Smart AI
 middle_name:
-last_name: Lab
+last_name: Innovation Lab
 contact_note: >
   saeromlee@knu.ac.kr
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Smart AI & Innovation Lab at Kyungpook National University.
 footer_text: >
-  Smart AI & Innovation Lab, Kyungpook National University.
+  Smart AI & Innovation Lab (SAIL), Kyungpook National University.
 keywords: human-centered ai, digital platforms, intelligent information systems, digital innovation, knu # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🔷 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)

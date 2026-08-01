@@ -2,7 +2,7 @@
 layout: page
 permalink: /research/
 title: Research
-description: Four research areas of Smart AI & Innovation Lab.
+description: "Four research areas of Smart AI & Innovation Lab."
 nav: true
 nav_order: 2
 ---
@@ -85,7 +85,7 @@ nav_order: 2
 </style>
 
 <section class="research-hero">
-  <p>SAIL Lab focuses on human-centered AI, digital platforms, intelligent information systems, and digital innovation. The four areas share a single blue visual system and connect people, data, organizations, and emerging technologies.</p>
+  <p>Smart AI & Innovation Lab focuses on human-centered AI, digital platforms, intelligent information systems, and digital innovation. The four areas share a single blue visual system and connect people, data, organizations, and emerging technologies.</p>
 </section>
 
 <div class="research-area-list">

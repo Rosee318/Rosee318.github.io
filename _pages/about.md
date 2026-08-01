@@ -2,7 +2,7 @@
 layout: page
 title: Home
 permalink: /
-description: Smart AI & Innovation Lab at Kyungpook National University
+description: "Smart AI & Innovation Lab at Kyungpook National University"
 nav: false
 nav_order: 1
 ---
@@ -317,9 +317,9 @@ nav_order: 1
 <main class="sail-home" id="top">
   <section class="sail-hero" aria-labelledby="sail-home-title">
     <div>
-      <div class="sail-hero__eyebrow">SAIL Lab · Smart AI & Innovation Lab</div>
-      <h1 id="sail-home-title">AI &amp; DIGITAL<br>INNOVATION LAB</h1>
-      <p class="sail-hero__subtitle">Designing Human-Centered AI for Digital Innovation</p>
+      <div class="sail-hero__eyebrow">SAIL · Smart AI & Innovation Lab</div>
+      <h1 id="sail-home-title">Smart AI &amp;<br>Innovation Lab</h1>
+      <p class="sail-hero__subtitle">Human-Centered AI, Digital Platforms, and Intelligent Information Systems</p>
       <div class="sail-hero__buttons">
         <a class="sail-button sail-button--primary" href="{{ '/research/' | relative_url }}">Research</a>
         <a class="sail-button" href="{{ '/publications/' | relative_url }}">Publications</a>
@@ -382,7 +382,7 @@ nav_order: 1
 
   <section class="sail-section" aria-labelledby="research-areas">
     <h2 id="research-areas">Research Areas</h2>
-    <p class="sail-section__lead">SAIL Lab studies how AI, platforms, information systems, and digital innovation shape decisions, organizations, and society.</p>
+    <p class="sail-section__lead">Smart AI & Innovation Lab studies how AI, platforms, information systems, and emerging technologies shape decisions, organizations, and society.</p>
     <div class="sail-research-grid">
       {% for area in site.data.research_areas %}
         <article class="sail-area-card" style="--area-accent: {{ area.accent }};">
