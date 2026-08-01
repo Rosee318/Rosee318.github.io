@@ -4,7 +4,7 @@ permalink: /members/
 title: Members
 description: Director, current members, and alumni.
 nav: true
-nav_order: 7
+nav_order: 3
 ---
 
 <style>

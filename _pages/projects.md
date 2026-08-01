@@ -4,7 +4,7 @@ permalink: /projects/
 title: Projects
 description: Research projects, service, and career record.
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 <style>

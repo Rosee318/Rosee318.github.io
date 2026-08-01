@@ -136,16 +136,6 @@
 - person: 김준석
   group: Junseok Kim
   type: Award
-  title: "학부 공지사항"
-  source: 경북대학교 컴퓨터학부
-  date: "확인되지 않음"
-  verified_on: "2026-08-01"
-  status: "접속은 가능했으나 게시판 본문과 김준석 관련 내용이 공개 페이지에서 확인되지 않음"
-  url: "https://computer.knu.ac.kr/bbs/board.php?bo_table=sub5_2_a&wr_id=520"
-
-- person: 김준석
-  group: Junseok Kim
-  type: Award
   title: "컴퓨터학부 학생, 각종 경진대회에서 대상 등 다수 수상"
   source: 경북대학교 포토뉴스
   date: "2023-12-27"

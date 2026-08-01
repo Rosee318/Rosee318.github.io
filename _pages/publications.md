@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications
 description: Full publication record from the curriculum vitae.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 {% assign international_journals = site.data.cv | where: "title", "International Journal Articles" | first %}
