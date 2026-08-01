@@ -127,6 +127,49 @@ nav_order: 4
   .teaching-course-grid {
     grid-template-columns: 1fr;
   }
+
+  .teaching-history-wrap {
+    overflow-x: visible;
+  }
+
+  .teaching-history {
+    min-width: 0;
+  }
+
+  .teaching-history thead {
+    display: none;
+  }
+
+  .teaching-history,
+  .teaching-history tbody,
+  .teaching-history tr,
+  .teaching-history td {
+    display: block;
+    width: 100%;
+  }
+
+  .teaching-history tr {
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .teaching-history td {
+    border-bottom: 0;
+    display: grid;
+    gap: 0.45rem;
+    grid-template-columns: 4.8rem 1fr;
+    padding: 0.2rem 0;
+  }
+
+  .teaching-history td::before {
+    color: #1e40af;
+    content: attr(data-label);
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
 }
 </style>
 
@@ -170,11 +213,11 @@ nav_order: 4
 <tbody>
 {% for item in site.data.teaching_courses.history %}
 <tr>
-<td>{{ item.year }}</td>
-<td>{{ item.term }}</td>
-<td>{{ item.level }}</td>
-<td><strong>{{ item.title }}</strong><br>{{ item.code }} · {{ item.category }}</td>
-<td>{{ item.unit }}</td>
+<td data-label="Year">{{ item.year }}</td>
+<td data-label="Term">{{ item.term }}</td>
+<td data-label="Level">{{ item.level }}</td>
+<td data-label="Course"><strong>{{ item.title }}</strong><br>{{ item.code }} · {{ item.category }}</td>
+<td data-label="Unit">{{ item.unit }}</td>
 </tr>
 {% endfor %}
 </tbody>
