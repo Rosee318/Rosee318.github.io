@@ -101,6 +101,15 @@ nav_order: 3
   line-height: 1.25;
 }
 
+.member-card p {
+  margin-bottom: 0.45rem;
+}
+
+.member-meta {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
 .member-cv-link {
   font-size: 0.76rem;
   margin-left: 0.35rem;
@@ -144,9 +153,25 @@ nav_order: 3
   <h2>Current Members</h2>
   <div class="member-grid">
     <section class="member-card">
+      <div class="member-label">Part-time Ph.D. Student</div>
+      <h3>이보람 / Boram Lee</h3>
+      <p>Part-time Ph.D. student, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: NongHyup</p>
+    </section>
+
+    <section class="member-card">
       <div class="member-label">Ph.D. Student</div>
       <h3>김준석 / Junseok Kim</h3>
       <p>Ph.D. student, Kyungpook National University.</p>
+      <p><a href="mailto:ufo1112@naver.com">ufo1112@naver.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">Part-time Ph.D. Student</div>
+      <h3>최윤정 / Yunjung Choi</h3>
+      <p>Part-time Ph.D. student, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: DIP</p>
+      <p><a href="mailto:dbswjd20507@gmail.com">dbswjd20507@gmail.com</a></p>
     </section>
   </div>
 
@@ -154,8 +179,41 @@ nav_order: 3
   <div class="member-grid">
     <section class="member-card">
       <div class="member-label">Alumni</div>
+      <h3>이광원 / Kwangwon Lee</h3>
+      <p>Ph.D. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: IM Bank</p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">Alumni</div>
       <h3>배성훈 / Seonghun Bae</h3>
-      <p>Ph.D. student, HKUST (Information Systems).</p>
+      <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: The Hong Kong Polytechnic University</p>
+      <p><a href="mailto:chopchop0411@gmail.com">chopchop0411@gmail.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">Alumni</div>
+      <h3>김혜린 / Hyerin Kim</h3>
+      <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: Public official</p>
+      <p><a href="mailto:hrinsam3@gmail.com">hrinsam3@gmail.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">Alumni</div>
+      <h3>한민정 / Minjung Han</h3>
+      <p>Part-time M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: Developer</p>
+      <p><a href="mailto:hmj9656@gmail.com">hmj9656@gmail.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">Alumni</div>
+      <h3>이서현 / Seohyun Lee</h3>
+      <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: Food and beverage professional</p>
+      <p><a href="mailto:suny8362@gmail.com">suny8362@gmail.com</a></p>
     </section>
 
     <section class="member-card">
@@ -164,15 +222,9 @@ nav_order: 3
         이혜원 / Hyewon Lee
         <a class="member-cv-link" href="{{ '/assets/pdf/hyewon_lee_cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
       </h3>
-      <p>M.S. in Information Systems, Kyungpook National University (2023-2025). Currently Ph.D. student in Information Systems, Kent State University (2025-).</p>
-      <p><a href="mailto:hlee63@kent.edu">hlee63@kent.edu</a></p>
-    </section>
-
-    <section class="member-card">
-      <div class="member-label">Alumni</div>
-      <h3>이광원 / Kwangwon Lee</h3>
-      <p>Deputy Executive Vice President, iM Bank (formerly Daegu Bank).</p>
-      <p><a href="https://www.dgb.co.kr/" target="_blank" rel="noopener noreferrer">iM Bank</a></p>
+      <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Preparing for Ph.D. studies in the United States</p>
+      <p><a href="mailto:dws9318@gmail.com">dws9318@gmail.com</a></p>
     </section>
   </div>
 </div>
