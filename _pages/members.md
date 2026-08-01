@@ -110,6 +110,12 @@ nav_order: 3
   font-size: 0.92rem;
 }
 
+.member-section-title {
+  color: #0f2f5f;
+  font-size: 1.18rem;
+  margin: 1.35rem 0 0.75rem;
+}
+
 .member-cv-link {
   font-size: 0.76rem;
   margin-left: 0.35rem;
@@ -161,7 +167,7 @@ nav_order: 3
 
     <section class="member-card">
       <div class="member-label">Ph.D. Student</div>
-      <h3>김준석 / Junseok Kim</h3>
+      <h3>김준석 / Joonseok Kim</h3>
       <p>Ph.D. student, Kyungpook National University.</p>
       <p><a href="mailto:ufo1112@naver.com">ufo1112@naver.com</a></p>
     </section>
@@ -176,55 +182,65 @@ nav_order: 3
   </div>
 
   <h2>Alumni</h2>
+  <h3 class="member-section-title">Ph.D. Alumni</h3>
   <div class="member-grid">
     <section class="member-card">
-      <div class="member-label">Alumni</div>
+      <div class="member-label">Ph.D. Alumni</div>
       <h3>이광원 / Kwangwon Lee</h3>
       <p>Ph.D. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Graduated: Aug. 2026</p>
       <p class="member-meta">Current affiliation: IM Bank</p>
     </section>
+  </div>
 
+  <h3 class="member-section-title">M.S. Alumni</h3>
+  <div class="member-grid">
     <section class="member-card">
-      <div class="member-label">Alumni</div>
-      <h3>배성훈 / Seonghun Bae</h3>
-      <p>M.S. in Information Systems, Kyungpook National University.</p>
-      <p class="member-meta">Current affiliation: The Hong Kong Polytechnic University</p>
-      <p><a href="mailto:chopchop0411@gmail.com">chopchop0411@gmail.com</a></p>
-    </section>
-
-    <section class="member-card">
-      <div class="member-label">Alumni</div>
-      <h3>김혜린 / Hyerin Kim</h3>
-      <p>M.S. in Information Systems, Kyungpook National University.</p>
-      <p class="member-meta">Current affiliation: Public official</p>
-      <p><a href="mailto:hrinsam3@gmail.com">hrinsam3@gmail.com</a></p>
-    </section>
-
-    <section class="member-card">
-      <div class="member-label">Alumni</div>
-      <h3>한민정 / Minjung Han</h3>
-      <p>Part-time M.S. in Information Systems, Kyungpook National University.</p>
-      <p class="member-meta">Current affiliation: Developer</p>
-      <p><a href="mailto:hmj9656@gmail.com">hmj9656@gmail.com</a></p>
-    </section>
-
-    <section class="member-card">
-      <div class="member-label">Alumni</div>
-      <h3>이서현 / Seohyun Lee</h3>
-      <p>M.S. in Information Systems, Kyungpook National University.</p>
-      <p class="member-meta">Current affiliation: Food and beverage professional</p>
-      <p><a href="mailto:suny8362@gmail.com">suny8362@gmail.com</a></p>
-    </section>
-
-    <section class="member-card">
-      <div class="member-label">Alumni</div>
+      <div class="member-label">M.S. Alumni</div>
       <h3>
         이혜원 / Hyewon Lee
         <a class="member-cv-link" href="{{ '/assets/pdf/hyewon_lee_cv.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
       </h3>
       <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Graduated: Aug. 2025</p>
       <p class="member-meta">Preparing for Ph.D. studies in the United States</p>
       <p><a href="mailto:dws9318@gmail.com">dws9318@gmail.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">M.S. Alumni</div>
+      <h3>한민정 / Minjung Han</h3>
+      <p>Part-time M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Graduated: Feb. 2025</p>
+      <p class="member-meta">Current affiliation: Developer</p>
+      <p><a href="mailto:hmj9656@gmail.com">hmj9656@gmail.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">M.S. Alumni</div>
+      <h3>이서현 / Seohyun Lee</h3>
+      <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Graduated: Aug. 2024</p>
+      <p class="member-meta">Current affiliation: Food and beverage professional</p>
+      <p><a href="mailto:suny8362@gmail.com">suny8362@gmail.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">M.S. Alumni</div>
+      <h3>김혜린 / Hyerin Kim</h3>
+      <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Graduated: Feb. 2024</p>
+      <p class="member-meta">Current affiliation: Public official</p>
+      <p><a href="mailto:hrinsam3@gmail.com">hrinsam3@gmail.com</a></p>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">M.S. Alumni</div>
+      <h3>배성훈 / Seonghun Bae</h3>
+      <p>M.S. in Information Systems, Kyungpook National University.</p>
+      <p class="member-meta">Graduated: Feb. 2023</p>
+      <p class="member-meta">Current affiliation: The Hong Kong Polytechnic University</p>
+      <p><a href="mailto:chopchop0411@gmail.com">chopchop0411@gmail.com</a></p>
     </section>
   </div>
 </div>
