@@ -143,43 +143,6 @@ html[data-theme="dark"] {
   </div>
 </section>
 
-## Current Members
-
-<div class="member-grid">
-  <section class="member-card">
-    <div class="member-label">Ph.D. Student</div>
-    <h3>김준석 / Junseok Kim</h3>
-    <p>Ph.D. student, Kyungpook National University.</p>
-  </section>
-</div>
-
-## Alumni
-
-<div class="member-grid">
-  <section class="member-card">
-    <div class="member-label">Alumni</div>
-    <h3>배성훈 / Seonghun Bae</h3>
-    <p>Ph.D. student, HKUST (Information Systems).</p>
-  </section>
-
-  <section class="member-card">
-    <div class="member-label">Alumni</div>
-    <h3>
-      이혜원 / Hyewon Lee
-      <a class="member-cv-link" href="{{ '/assets/pdf/hyewon_lee_cv.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a>
-    </h3>
-    <p>M.S. in Information Systems, Kyungpook National University (2023-2025). Currently Ph.D. student in Information Systems, Kent State University (2025-).</p>
-    <p><a href="mailto:hlee63@kent.edu">hlee63@kent.edu</a></p>
-  </section>
-
-  <section class="member-card">
-    <div class="member-label">Alumni</div>
-    <h3>이광원 / Kwangwon Lee</h3>
-    <p>Deputy Executive Vice President (부행장보), iM Bank (formerly Daegu Bank).</p>
-    <p><a href="https://www.dgb.co.kr/">iM Bank</a></p>
-  </section>
-</div>
-
 ## Media & Articles
 
 <div class="media-grid">
@@ -215,5 +178,42 @@ html[data-theme="dark"] {
       <li><a href="https://www.knu.ac.kr/wbbs/wbbs/bbs/btin/viewBtin.action?bbs_cde=28&amp;btin.bbs_cde=28&amp;btin.doc_no=1333793&amp;btin.appl_no=000000&amp;btin.page=1&amp;btin.search_type=&amp;btin.search_text=&amp;popupDeco=&amp;btin.note_div=row&amp;menu_idx=214">컴퓨터학부 우성현·김준석 학생, 2024 대한민국 인재상 수상</a></li>
       <li><a href="https://www.swuniv.kr/540522002/?bmode=view&amp;idx=160538820">[2024 SW중심대학 에세이 공모전] 우수상 - 경북대 김준석님 &lt;소프트웨어로 시작된 도전과 창업의 길&gt;</a></li>
     </ul>
+  </section>
+</div>
+
+## Current Members
+
+<div class="member-grid">
+  <section class="member-card">
+    <div class="member-label">Ph.D. Student</div>
+    <h3>김준석 / Junseok Kim</h3>
+    <p>Ph.D. student, Kyungpook National University.</p>
+  </section>
+</div>
+
+## Alumni
+
+<div class="member-grid">
+  <section class="member-card">
+    <div class="member-label">Alumni</div>
+    <h3>배성훈 / Seonghun Bae</h3>
+    <p>Ph.D. student, HKUST (Information Systems).</p>
+  </section>
+
+  <section class="member-card">
+    <div class="member-label">Alumni</div>
+    <h3>
+      이혜원 / Hyewon Lee
+      <a class="member-cv-link" href="{{ '/assets/pdf/hyewon_lee_cv.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a>
+    </h3>
+    <p>M.S. in Information Systems, Kyungpook National University (2023-2025). Currently Ph.D. student in Information Systems, Kent State University (2025-).</p>
+    <p><a href="mailto:hlee63@kent.edu">hlee63@kent.edu</a></p>
+  </section>
+
+  <section class="member-card">
+    <div class="member-label">Alumni</div>
+    <h3>이광원 / Kwangwon Lee</h3>
+    <p>Deputy Executive Vice President (부행장보), iM Bank (formerly Daegu Bank).</p>
+    <p><a href="https://www.dgb.co.kr/">iM Bank</a></p>
   </section>
 </div>
