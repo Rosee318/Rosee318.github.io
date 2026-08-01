@@ -28,4 +28,4 @@ linkedin_username:
 
 # ---- 네비게이션에 표시할 페이지 ----
 # 각 페이지의 nav: true / nav_order 로 이미 지정해 두었습니다.
-#   about(홈) / publications / cv / teaching / projects / students
+#   about(홈) / research / members / publications / teaching / projects / media / contact

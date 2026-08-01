@@ -27,3 +27,125 @@ a,
 a:hover {
   color: var(--global-theme-color);
 }
+
+#navbar {
+  .navbar-brand {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .navbar-collapse-main {
+    justify-content: flex-end;
+  }
+
+  .navbar-menu-list {
+    align-items: center;
+    gap: 0.05rem;
+    margin-left: auto;
+  }
+
+  .navbar-menu-list > .nav-item,
+  .navbar-menu-list > .toggle-container {
+    flex: 0 0 auto;
+  }
+
+  .navbar-menu-list .nav-link {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}
+
+@supports selector(:has(*)) {
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/"]) {
+    order: 10;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/research/"]) {
+    order: 20;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/members/"]) {
+    order: 30;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/publications/"]) {
+    order: 40;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/teaching/"]) {
+    order: 50;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/projects/"]) {
+    order: 60;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/media-news/"]) {
+    order: 70;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(.nav-link[href="/contact/"]) {
+    order: 80;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(#search-toggle) {
+    order: 90;
+  }
+
+  #navbar .navbar-menu-list > .toggle-container {
+    order: 100;
+  }
+}
+
+@media (min-width: 1200px) {
+  #navbar .navbar-menu-list {
+    flex-wrap: nowrap;
+  }
+
+  #navbar .navbar-menu-list .nav-link {
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  #navbar.navbar-expand-sm .navbar-toggler-main {
+    display: block;
+  }
+
+  #navbar.navbar-expand-sm .navbar-collapse-main {
+    align-items: flex-start;
+    flex-basis: 100%;
+    flex-grow: 1;
+  }
+
+  #navbar.navbar-expand-sm .navbar-collapse-main:not(.show) {
+    display: none !important;
+  }
+
+  #navbar.navbar-expand-sm .navbar-collapse-main.show,
+  #navbar.navbar-expand-sm .navbar-collapse-main.collapsing {
+    display: block !important;
+  }
+
+  #navbar .navbar-menu-list {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    margin: 0.8rem 0 0;
+    width: 100%;
+  }
+
+  #navbar .navbar-menu-list > .nav-item,
+  #navbar .navbar-menu-list > .toggle-container {
+    width: 100%;
+  }
+
+  #navbar .navbar-menu-list .nav-link {
+    display: block;
+    padding: 0.55rem 0;
+  }
+}
