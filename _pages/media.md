@@ -4,7 +4,7 @@ permalink: /media-news/
 title: Media & News
 description: Media coverage, interviews, videos, and featured news.
 nav: true
-nav_order: 5
+nav_order: 6
 ---
 
 {% assign people = "이새롬|아쿠아칼릭스|이광원|김준석" | split: "|" %}

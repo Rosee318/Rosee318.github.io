@@ -4,7 +4,7 @@ permalink: /contact/
 title: Contact
 description: "Contact information for Smart AI & Innovation Lab."
 nav: true
-nav_order: 7
+nav_order: 8
 ---
 
 <style>
