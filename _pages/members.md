@@ -203,7 +203,7 @@ nav_order: 3
       </h3>
       <p>M.S. in Information Systems, Kyungpook National University.</p>
       <p class="member-meta">Graduated: Aug. 2025</p>
-      <p class="member-meta">Preparing for Ph.D. studies in the United States</p>
+      <p class="member-meta">Ph.D. student, Kent State University</p>
       <p><a href="mailto:dws9318@gmail.com">dws9318@gmail.com</a></p>
     </section>
 
