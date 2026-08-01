@@ -3,7 +3,7 @@ layout: page
 title: Home
 permalink: /
 description: Smart AI & Innovation Lab at Kyungpook National University
-nav: true
+nav: false
 nav_order: 1
 ---
 
@@ -18,12 +18,13 @@ nav_order: 1
 }
 
 .sail-hero {
+  align-items: center;
   background: linear-gradient(135deg, #081a33 0%, #123f7a 52%, #155e75 100%);
   border-radius: 8px;
   color: #ffffff;
   display: grid;
   gap: 2rem;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(260px, 390px);
   margin-bottom: 2.5rem;
   overflow: hidden;
   padding: clamp(2rem, 5vw, 4rem);
@@ -89,19 +90,88 @@ nav_order: 1
   color: #0f2f5f;
 }
 
-.sail-diagram {
-  align-self: center;
+.sail-hero__photo-card {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(219, 234, 254, 0.28);
   border-radius: 8px;
-  min-height: 360px;
+  justify-self: end;
+  max-width: 390px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.sail-hero__photo-card img {
+  display: block;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+  object-position: center 22%;
+  width: 100%;
+}
+
+.sail-hero__caption {
+  background: rgba(8, 26, 51, 0.72);
+  color: #dbeafe;
+  font-size: 0.92rem;
+  padding: 0.85rem 1rem;
+}
+
+.sail-hero__caption strong {
+  color: #ffffff;
+  display: block;
+  font-size: 1rem;
+}
+
+.sail-map-section {
+  margin: 0 0 2.6rem;
+}
+
+.sail-system-map {
+  background: #f4f8ff;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
   padding: 1rem;
 }
 
-.sail-diagram svg {
+.sail-system-map svg {
   display: block;
   height: auto;
   width: 100%;
+}
+
+.sail-mobile-map {
+  display: none;
+}
+
+.sail-mobile-map__core {
+  align-items: center;
+  background: #0f2f5f;
+  border-radius: 8px;
+  color: #ffffff;
+  display: flex;
+  font-size: 1.35rem;
+  font-weight: 800;
+  height: 4rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.sail-mobile-map__areas {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sail-mobile-map__areas span {
+  --area-accent: #2563eb;
+  background: color-mix(in srgb, var(--area-accent) 8%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--area-accent) 24%, #dbeafe);
+  border-radius: 8px;
+  color: #0f2f5f;
+  font-size: 0.86rem;
+  font-weight: 800;
+  padding: 0.65rem 0.7rem;
+  text-align: center;
 }
 
 .sail-section {
@@ -202,6 +272,11 @@ nav_order: 1
     grid-template-columns: 1fr;
   }
 
+  .sail-hero__photo-card {
+    justify-self: start;
+    max-width: 320px;
+  }
+
   .sail-research-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -210,6 +285,26 @@ nav_order: 1
 @media (max-width: 575px) {
   .sail-hero {
     padding: 1.4rem;
+  }
+
+  .sail-hero h1 {
+    font-size: clamp(2.1rem, 13vw, 3rem);
+  }
+
+  .sail-hero__photo-card {
+    max-width: 260px;
+  }
+
+  .sail-system-map {
+    display: none;
+  }
+
+  .sail-mobile-map {
+    background: #f4f8ff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    display: block;
+    padding: 0.9rem;
   }
 
   .sail-research-grid,
@@ -231,42 +326,57 @@ nav_order: 1
       </div>
     </div>
 
-    <div class="sail-diagram" aria-label="SAIL Lab research map">
-      <svg viewBox="0 0 560 420" role="img" aria-labelledby="sail-diagram-title sail-diagram-desc">
+    <div class="sail-hero__photo-card">
+      <img src="{{ '/assets/img/saerom_profile_full.png' | relative_url }}" alt="Professor Saerom Lee">
+      <div class="sail-hero__caption">
+        <strong>Prof. Saerom Lee</strong>
+        Kyungpook National University
+      </div>
+    </div>
+  </section>
+
+  <section class="sail-map-section" aria-label="SAIL Lab research map">
+    <div class="sail-system-map">
+      <svg viewBox="0 0 860 300" role="img" aria-labelledby="sail-diagram-title sail-diagram-desc">
         <title id="sail-diagram-title">SAIL Lab research map</title>
         <desc id="sail-diagram-desc">AI connects human-centered AI, digital platforms, intelligent information systems, and digital innovation.</desc>
-        <defs>
-          <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#020617" flood-opacity="0.18"/>
-          </filter>
-        </defs>
         <g fill="none" stroke="#93c5fd" stroke-linecap="round" stroke-width="2">
-          <path d="M280 210 L150 100"/>
-          <path d="M280 210 L410 100"/>
-          <path d="M280 210 L150 320"/>
-          <path d="M280 210 L410 320"/>
+          <path d="M430 150 L205 84"/>
+          <path d="M430 150 L655 84"/>
+          <path d="M430 150 L205 216"/>
+          <path d="M430 150 L655 216"/>
         </g>
-        <circle cx="280" cy="210" r="74" fill="#eff6ff" filter="url(#softGlow)"/>
-        <text x="280" y="204" fill="#0f2f5f" font-family="Inter, Noto Sans KR, Pretendard, sans-serif" font-size="34" font-weight="800" text-anchor="middle">AI</text>
-        <text x="280" y="235" fill="#2563eb" font-family="Inter, Noto Sans KR, Pretendard, sans-serif" font-size="15" font-weight="700" text-anchor="middle">Digital Innovation</text>
+        <circle cx="430" cy="150" r="56" fill="#0f2f5f"/>
+        <text x="430" y="143" fill="#ffffff" font-family="Inter, Noto Sans KR, Pretendard, sans-serif" font-size="30" font-weight="800" text-anchor="middle">AI</text>
+        <text x="430" y="169" fill="#bfdbfe" font-family="Inter, Noto Sans KR, Pretendard, sans-serif" font-size="13" font-weight="700" text-anchor="middle">SAIL Lab</text>
+
         <g font-family="Inter, Noto Sans KR, Pretendard, sans-serif" font-weight="700" text-anchor="middle">
-          <rect x="45" y="56" width="210" height="72" rx="8" fill="#ffffff" opacity="0.94"/>
-          <text x="150" y="88" fill="#2563eb" font-size="17">Human</text>
-          <text x="150" y="110" fill="#475569" font-size="13">Human-Centered AI</text>
+          <rect x="80" y="50" width="250" height="68" rx="8" fill="#ffffff" stroke="#bfdbfe"/>
+          <text x="205" y="80" fill="#2563eb" font-size="16">Human-Centered AI</text>
+          <text x="205" y="101" fill="#64748b" font-size="12">Human</text>
 
-          <rect x="305" y="56" width="210" height="72" rx="8" fill="#ffffff" opacity="0.94"/>
-          <text x="410" y="88" fill="#4f46e5" font-size="17">Platform</text>
-          <text x="410" y="110" fill="#475569" font-size="13">Digital Platforms</text>
+          <rect x="530" y="50" width="250" height="68" rx="8" fill="#ffffff" stroke="#c7d2fe"/>
+          <text x="655" y="80" fill="#4f46e5" font-size="16">Digital Platforms</text>
+          <text x="655" y="101" fill="#64748b" font-size="12">Platform</text>
 
-          <rect x="45" y="284" width="210" height="72" rx="8" fill="#ffffff" opacity="0.94"/>
-          <text x="150" y="316" fill="#0891b2" font-size="17">Information</text>
-          <text x="150" y="338" fill="#475569" font-size="13">Intelligent Systems</text>
+          <rect x="80" y="182" width="250" height="68" rx="8" fill="#ffffff" stroke="#bae6fd"/>
+          <text x="205" y="212" fill="#0891b2" font-size="16">Intelligent Information Systems</text>
+          <text x="205" y="233" fill="#64748b" font-size="12">Information</text>
 
-          <rect x="305" y="284" width="210" height="72" rx="8" fill="#ffffff" opacity="0.94"/>
-          <text x="410" y="316" fill="#1d4ed8" font-size="17">Innovation</text>
-          <text x="410" y="338" fill="#475569" font-size="13">Digital Innovation</text>
+          <rect x="530" y="182" width="250" height="68" rx="8" fill="#ffffff" stroke="#bfdbfe"/>
+          <text x="655" y="212" fill="#1d4ed8" font-size="16">Digital Innovation</text>
+          <text x="655" y="233" fill="#64748b" font-size="12">Innovation</text>
         </g>
       </svg>
+    </div>
+
+    <div class="sail-mobile-map" aria-label="SAIL Lab research areas">
+      <div class="sail-mobile-map__core">AI</div>
+      <div class="sail-mobile-map__areas">
+        {% for area in site.data.research_areas %}
+          <span style="--area-accent: {{ area.accent }};">{{ area.name }}</span>
+        {% endfor %}
+      </div>
     </div>
   </section>
 
