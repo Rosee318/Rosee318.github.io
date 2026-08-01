@@ -84,25 +84,25 @@ nav_order: 5
 <p class="media-news-intro">Selected media coverage, interviews, videos, and featured news related to SAIL Lab members and collaborators.</p>
 
 {% for person in people %}
-  {% assign entries = site.data.media | where: "person", person %}
-  {% if entries.size > 0 %}
-    <section class="media-person">
-      <h2>{{ person }}</h2>
-      <div class="media-news-grid">
-        {% for item in entries %}
-          <article class="media-news-card">
-            <div class="media-news-card__meta">
-              <span class="media-news-card__type">{{ item.type }}</span>
-              <span>{{ item.source | escape }}</span>
-              <span>{{ item.date | escape }}</span>
-            </div>
-            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title | escape }}</a>
-            {% if item.status %}
-              <p class="media-news-card__status">{{ item.status | escape }}</p>
-            {% endif %}
-          </article>
-        {% endfor %}
+{% assign entries = site.data.media | where: "person", person %}
+{% if entries.size > 0 %}
+<section class="media-person">
+  <h2>{{ person }}</h2>
+  <div class="media-news-grid">
+{% for item in entries %}
+    <article class="media-news-card">
+      <div class="media-news-card__meta">
+        <span class="media-news-card__type">{{ item.type | escape }}</span>
+        <span>{{ item.source | escape }}</span>
+        <span>{{ item.date | escape }}</span>
       </div>
-    </section>
-  {% endif %}
+      <a href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{{ item.title | escape }}</a>
+{% if item.status %}
+      <p class="media-news-card__status">{{ item.status | escape }}</p>
+{% endif %}
+    </article>
+{% endfor %}
+  </div>
+</section>
+{% endif %}
 {% endfor %}
