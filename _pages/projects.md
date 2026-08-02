@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /projects/
-title: Projects
-description: Research projects, service, and career record.
+title: Career & Project
+description: Career record, research projects, and service.
 nav: true
 nav_order: 6
 ---
@@ -219,7 +219,7 @@ nav_order: 6
       <ul class="projects-list">
         <li>
           <span class="projects-date">2026.06 - present</span>
-          로보칼릭스(Robocalix) 창업
+          <a href="https://robo-calix-aqua-smart.lovable.app/" target="_blank" rel="noopener noreferrer">로보칼릭스(Robocalix)</a> 창업
           <span class="projects-role">Founder, established on 2026.06.30</span>
         </li>
       </ul>
