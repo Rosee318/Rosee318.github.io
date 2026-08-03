@@ -312,7 +312,7 @@ nav_order: 3
         <h5>Journal Articles</h5>
         <ul>
           <li>김혜원, 김혜린, 이서현, 이새롬 (2024). 학령기 아동 모바일 의존에 영향을 미치는 부모의 심리적 특성 연구. 지식경영연구.</li>
-          <li>이서현, 이새롬, 곽동헌 (2022). When do I Protect Myself? Avoidance Motivation toward Online Sexual Harassment on Social Media: A Study Based on Threat Avoidance Theory. 지식경영연구, 23(3). (교신저자)</li>
+          <li>이서현, 이새롬, 곽동헌 (2022). When do I Protect Myself? Avoidance Motivation toward Online Sexual Harassment on Social Media: A Study Based on Threat Avoidance Theory. 지식경영연구, 23(3).</li>
         </ul>
         <h5>Conference Presentations</h5>
         <ul>
