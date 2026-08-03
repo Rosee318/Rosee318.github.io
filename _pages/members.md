@@ -193,27 +193,60 @@ nav_order: 3
   </section>
 
   <h2>Current Members</h2>
-  <div class="member-grid">
-    <section class="member-card">
-      <div class="member-label">Part-time Ph.D. Student</div>
-      <h3>이보람 / Boram Lee</h3>
-      <p>Part-time Ph.D. student, Kyungpook National University.</p>
-      <p class="member-meta">Current affiliation: NongHyup</p>
-    </section>
-
+  <div class="member-grid member-grid--stacked">
     <section class="member-card">
       <div class="member-label">Ph.D. Student</div>
       <h3>김준석 / Joonseok Kim</h3>
       <p>Ph.D. student, Kyungpook National University.</p>
       <p><a href="mailto:ufo1112@naver.com">ufo1112@naver.com</a></p>
+      <div class="member-publications">
+        <h4>Publications</h4>
+        <h5>Journal Articles</h5>
+        <ul>
+          <li>김준석, 박현선, 이새롬 (2026). Intention to Give Information for Vision-Based Smart Home Products: Based on the Privacy Calculus Model. 경영정보학연구.</li>
+          <li>김준석, 윤여훈, 김경민, 이새롬 (2026). Korean Disfluency Span Detection for AI-Based Presentation Feedback. 인터넷전자상거래연구.</li>
+          <li>김준석, 이새롬, 박종화 (2025). 복합 낙상 시나리오 영상에서의 Transformer 모델 최적화 및 성능 평가. 경영학연구.</li>
+        </ul>
+        <h5>Conference Presentations</h5>
+        <ul>
+          <li>김준석, 이새롬, 박종화 (2025). Vision Transformer 기반 낙상 감지 모델: 대규모 실환경 데이터를 기반으로. 2025 경영정보 관련 학회 춘계 통합학술대회.</li>
+        </ul>
+      </div>
     </section>
 
     <section class="member-card">
       <div class="member-label">Part-time Ph.D. Student</div>
-      <h3>최윤정 / Yunjung Choi</h3>
+      <h3>이보람 / Boram Lee</h3>
+      <p>Part-time Ph.D. student, Kyungpook National University.</p>
+      <p class="member-meta">Current affiliation: NongHyup</p>
+      <div class="member-publications">
+        <h4>Publications</h4>
+        <h5>Journal Articles</h5>
+        <ul>
+          <li>Choi, Y., Lee, B., & Lee, S. (2026). Drivers of Multihoming in OTT Services: Parasocial Interaction and Technology-Enabled Flow. Asia Pacific Journal of Information Systems.</li>
+          <li>이광원, 이보람, 이새롬 (2026). 지방은행의 시중은행 전환을 위한 전략적 요인 탐색: 디지털 전환전략을 중심으로. 한국IT서비스학회지, 25(1).</li>
+          <li>이보람, 김혜린, 이새롬 (2023). 양가적 감정이 신기술 기반 서비스 도입에 미치는 영향: 메타버스 서비스 제공자를 중심으로. 지식경영연구, 24(3), 149-172.</li>
+        </ul>
+        <h5>Conference Presentations</h5>
+        <ul>
+          <li>이새롬, 이보람, 이민철 (2022). 메타버스 기술 기반 서비스 도입에 대한 은행의 대처 전략: 양가적 감정을 중심으로. 2022 한국경영정보학회 추계 학술대회.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="member-card">
+      <div class="member-label">Part-time Ph.D. Student</div>
+      <h3>최윤정 / Yunjeong Choi</h3>
       <p>Part-time Ph.D. student, Kyungpook National University.</p>
       <p class="member-meta">Current affiliation: DIP</p>
       <p><a href="mailto:dbswjd20507@gmail.com">dbswjd20507@gmail.com</a></p>
+      <div class="member-publications">
+        <h4>Publications</h4>
+        <h5>Journal Articles</h5>
+        <ul>
+          <li>Choi, Y., Lee, B., & Lee, S. (2026). Drivers of Multihoming in OTT Services: Parasocial Interaction and Technology-Enabled Flow. Asia Pacific Journal of Information Systems.</li>
+        </ul>
+      </div>
     </section>
   </div>
 

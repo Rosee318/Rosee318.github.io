@@ -7,7 +7,7 @@ nav: true
 nav_order: 7
 ---
 
-{% assign people = "이새롬|아쿠아칼릭스|이광원|김준석" | split: "|" %}
+{% assign people = "이새롬|아쿠아칼릭스|이광원|배성훈|김준석" | split: "|" %}
 
 <style>
 .media-news-intro {
