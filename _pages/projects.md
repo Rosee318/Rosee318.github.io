@@ -243,6 +243,36 @@ nav_order: 6
 </section>
 
 <section class="projects-section">
+  <h2>Anchor Project</h2>
+  <div class="projects-grid">
+    <article class="projects-item">
+      <h3>PAC 2026 (Physical AI Challenge)</h3>
+      <ul class="projects-list">
+        <li>
+          <span class="projects-date">2026.08.14 - 2026.10.30</span>
+          피지컬 AI로봇 전환(PAC 2026) 해커톤 대회 경북대학교 운영위원회 부위원장
+          <span class="projects-role">지식재산전문인력양성사업단 부단장으로 대회 운영 및 멘토링 구성 지원</span>
+        </li>
+        <li>
+          <span class="projects-date">2026.10.09 - 2026.10.10</span>
+          경북대학교 크리에이티브파크에서 기업 문제 해결형 AI·로봇 챌린지 운영
+          <span class="projects-role">지역 제조기업의 실제 문제를 AI·로봇 기술로 해결하는 산업 연계형 해커톤</span>
+        </li>
+      </ul>
+    </article>
+
+    <article class="projects-item">
+      <h3>Program Scope</h3>
+      <ul class="projects-list">
+        <li><span class="projects-date">2026.08.17 - 2026.09.11</span>참가자 모집, 팀 구성 및 아이디어 접수</li>
+        <li><span class="projects-date">2026.09.14 - 2026.09.25</span>본선 참가대상 50팀 선정 및 안내</li>
+        <li><span class="projects-date">2026.10.06</span>온라인 사전 멘토링 운영</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="projects-section">
   <h2>Professional Service</h2>
   <div class="projects-grid">
     <article class="projects-item">
