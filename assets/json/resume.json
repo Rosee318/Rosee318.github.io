@@ -183,40 +183,59 @@
       "endDate": "2010-02-01",
       "score": "",
       "courses": [],
-      "highlights": [
-        "부산대학교 무역·국제학 학사 (경영학 부전공) / B.A., Pusan National University"
-      ]
+      "highlights": ["부산대학교 무역·국제학 학사 (경영학 부전공) / B.A., Pusan National University"]
     }
   ],
   "awards": [],
   "certificates": [],
   "publications": [
     {
-      "name": "Choi, Y., Lee, B., & Lee, S. (2026). Drivers of Multihoming in OTT Services: Parasocial Interaction and Technology-Enabled Flow. Asia Pacific Journal of Information Systems (APJIS).",
+      "name": "Woo, S., Lee, S., & Jahng, J. (2026). When AI Becomes Hard to Refuse: Understanding Reactance to Mandatory Workplace AI. Journal of Organizational and End User Computing.",
       "publisher": "International Journal Articles",
       "releaseDate": "2026-01-01",
       "url": "",
       "summary": ""
     },
     {
-      "name": "Baek, H., Ko, C., & Lee, S. (2026). Visual and Verbal Fit-Diagnostic Contextual Cues and Review Helpfulness in Online Apparel Reviews. Journal of Retailing and Consumer Services, 93.",
+      "name": "Kim, P., Lee, K., Kang, W. J., Lee, G., & Lee, S. (2026). Financial Hardship and Problem Gambling Severity Among Young South Koreans: A Conditional Strain Model. Journal of Gambling Studies. Advance online publication. https://doi.org/10.1007/s10899-026-10556-6",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "https://doi.org/10.1007/s10899-026-10556-6",
+      "summary": ""
+    },
+    {
+      "name": "Baek, H., Kwon, B., & Lee, S. (2026). Understanding Smartphone Addiction through fsQCA: Configurations of Demographics, Personality, and App Usage Patterns. Asia Pacific Journal of Information Systems (APJIS).",
       "publisher": "International Journal Articles",
       "releaseDate": "2026-01-01",
       "url": "",
       "summary": ""
     },
     {
-      "name": "Lee, U., Lee, S., & Jahng, J. (2026). Who Is the Key Man in an Open Community? Based on Organizational Learning Theory with Structural Holes and Strength of Ties. Information and Software Technology, 198.",
+      "name": "Choi, Y., Lee, B., & Lee, S. (2026). Beyond One Platform: Understanding Multihoming in OTT Services through Parasocial Interaction and Flow. Asia Pacific Journal of Information Systems, 36(3), 596-626. https://doi.org/10.14329/apjis.2026.36.3.596",
       "publisher": "International Journal Articles",
       "releaseDate": "2026-01-01",
-      "url": "",
+      "url": "https://doi.org/10.14329/apjis.2026.36.3.596",
       "summary": ""
     },
     {
-      "name": "Piao, Z., Lee, S., & Baek, H. (2025). Revealing consumer hearts - the impact of emotional appeals in movie marketing: evidence from marketer-generated content on Weibo. Entertainment Computing, 55.",
+      "name": "Baek, H., Ko, C., & Lee, S. (2026). Visual and Verbal Fit-Diagnostic Contextual Cues and Review Helpfulness in Online Apparel Reviews. Journal of Retailing and Consumer Services, 93, 104887. https://doi.org/10.1016/j.jretconser.2026.104887",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "https://doi.org/10.1016/j.jretconser.2026.104887",
+      "summary": ""
+    },
+    {
+      "name": "Lee, U., Lee, S., & Jahng, J. (2026). Who is the key contributor in an open community? Based on organizational learning theory with structural holes and strength of ties. Information and Software Technology, 198, 108203. https://doi.org/10.1016/j.infsof.2026.108203",
+      "publisher": "International Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "https://doi.org/10.1016/j.infsof.2026.108203",
+      "summary": ""
+    },
+    {
+      "name": "Piao, Z., Lee, S., & Baek, H. (2025). Revealing consumer hearts - the impact of emotional appeals in movie marketing: evidence from marketer-generated content on Weibo. Entertainment Computing, 55, 101026. https://doi.org/10.1016/j.entcom.2025.101026",
       "publisher": "International Journal Articles",
       "releaseDate": "2025-01-01",
-      "url": "",
+      "url": "https://doi.org/10.1016/j.entcom.2025.101026",
       "summary": ""
     },
     {
@@ -353,6 +372,20 @@
       "summary": ""
     },
     {
+      "name": "김준석, 윤여훈, 이새롬 (2026). Speaker-Independent Recognition of Negative Nonverbal Behaviors for AI-Based Oral Presentation Assessment. 경영학연구, 55(5), 1901-1937. https://doi.org/10.17287/kmr.2026.55.5.1901",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "https://doi.org/10.17287/kmr.2026.55.5.1901",
+      "summary": ""
+    },
+    {
+      "name": "이상민, 김준석, 이새롬 (2026). 플랫폼은 시장을 집중시켰는가: 숙박 유통의 이중 구조 분석. 지능정보연구, 32(3), 593-606.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
       "name": "김준석, 박현선, 이새롬 (2026). Intention to Give Information for Vision-Based Smart Home Products: Based on the Privacy Calculus Model. 경영정보학연구.",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2026-01-01",
@@ -360,24 +393,24 @@
       "summary": ""
     },
     {
-      "name": "김준석, 윤여훈, 김경민, 이새롬 (2026). Korean Disfluency Span Detection for AI-Based Presentation Feedback. 인터넷전자상거래연구.",
+      "name": "김준석, 윤여훈, 김경민, 이새롬 (2026). Korean Disfluency Span Detection for AI-Based Presentation Feedback. 인터넷전자상거래연구, 26(4), 201-223. https://doi.org/10.37272/JIECR.2026.8.26.4.201",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2026-01-01",
-      "url": "",
+      "url": "https://doi.org/10.37272/JIECR.2026.8.26.4.201",
       "summary": ""
     },
     {
-      "name": "김혜린, 이새롬, 우수한 (2026). Factors influencing purchase intention of products created by influencers: Based on the trust transfer theory. 경영학연구, 55(4).",
+      "name": "김혜린, 우수한, 이새롬 (2026). Factors influencing purchase intention of products created by influencers: Based on the trust transfer theory. 경영학연구, 55(3), 1361-1389. https://doi.org/10.17287/kmr.2026.55.3.1361",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2026-01-01",
-      "url": "",
+      "url": "https://doi.org/10.17287/kmr.2026.55.3.1361",
       "summary": ""
     },
     {
-      "name": "이광원, 이보람, 이새롬 (2026). 지방은행의 시중은행 전환을 위한 전략적 요인 탐색: 디지털 전환전략을 중심으로. 한국IT서비스학회지, 25(1).",
+      "name": "이광원, 이보람, 이새롬 (2026). 지방은행의 시중은행 전환을 위한 전략적 요인 탐색: 디지털 전환 전략을 중심으로. 한국IT서비스학회지, 25(1), 19-39. https://doi.org/10.9716/KITS.2026.25.1.019",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2026-01-01",
-      "url": "",
+      "url": "https://doi.org/10.9716/KITS.2026.25.1.019",
       "summary": ""
     },
     {
@@ -528,28 +561,28 @@
       "summary": ""
     },
     {
-      "name": "백현미, 이새롬 (2018). 집단주의와 개인주의 문화에 따른 개방형 협업 지식공유 활동 비교 연구: 오픈소스 소프트웨어 프로젝트 개발자를 중심으로. 지식경영연구, 19(2), 133-150.",
+      "name": "백현미, 이새롬 (2018). 문화에 따른 개방형 협업 지식공유 활동 비교 연구: 집단주의 문화와 개인주의 문화를 중심으로. 지식경영연구, 19(2), 133-150.",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2018-01-01",
       "url": "",
       "summary": ""
     },
     {
-      "name": "구경모, 백현미, 이새롬 (2018). 개방형협업 참여자의 지식창출·지식공유 구조와 혁신 성과: 오픈소스 소프트웨어 개발 커뮤니티를 중심으로. 지식경영연구, 18(4).",
-      "publisher": "Domestic Journal Articles",
-      "releaseDate": "2018-01-01",
-      "url": "",
-      "summary": ""
-    },
-    {
-      "name": "이새롬, 장정주, 백현미 (2017). 개방적 협업에 있어서 지식의 활용(Exploitation)과 탐색(Exploration)이 성과에 미치는 영향: 오픈소스 소프트웨어 개발 프로젝트를 중심으로. 지식경영연구, 18(2).",
+      "name": "구경모, 백현미, 이새롬 (2017). 개방형협업 참여자의 지식창출·지식공유 구조와 혁신 성과: 오픈소스 소프트웨어 개발 커뮤니티를 중심으로. 지식경영연구, 18(4), 287-306.",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2017-01-01",
       "url": "",
       "summary": ""
     },
     {
-      "name": "이새롬, 장정주, 백현미 (2016). Role of Project Owner in OSS Project: Based on Impression Formation and Social Capital Theory. The Journal of Society for e-Business Studies, 21(2), 23-46.",
+      "name": "이새롬, 백현미, 장정주 (2017). 지식의 탐색(Exploration)과 활용(Exploitation)이 개방형협업의 성과에 미치는 영향: 오픈소스 소프트웨어 개발 프로젝트를 중심으로. 지식경영연구, 18(2), 85-102.",
+      "publisher": "Domestic Journal Articles",
+      "releaseDate": "2017-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이새롬, 백현미, 장정주 (2016). Role of Project Owner in OSS Project: Based on Impression Formation and Social Capital Theory. The Journal of Society for e-Business Studies, 21(2), 23-46.",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2016-01-01",
       "url": "",
@@ -573,6 +606,20 @@
       "name": "이새롬, 장정주 (2015). The Diffusion of Internet of Things: Forecasting Technologies and Company Strategies using Qualitative and Quantitative Approach. The Journal of Society for e-Business Studies, 20(4), 19-39.",
       "publisher": "Domestic Journal Articles",
       "releaseDate": "2015-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "이혜원, 이새롬, 노태우 (2026). When SNS Mindfulness Hurts and Helps: Affordances and Envy on Social Networking Sites. Journal details not listed in Google Scholar.",
+      "publisher": "Other Manuscripts",
+      "releaseDate": "2026-01-01",
+      "url": "",
+      "summary": ""
+    },
+    {
+      "name": "김상호, 안지호, 이새롬 (2026). AI 기반 업무환경에서 기술기반 스트레서와 AI 불안의 관계: AI 마음챙김의 역할. Journal details not listed in Google Scholar.",
+      "publisher": "Other Manuscripts",
+      "releaseDate": "2026-01-01",
       "url": "",
       "summary": ""
     },
@@ -619,7 +666,7 @@
       "summary": ""
     },
     {
-      "name": "Oh, S., Baek, H., & Lee, S. (2015). Reinvestigating the Relationship between Information Technology Capability and Firm Performance: Focusing on the Impact of the Adoption of Enterprise Systems. 19th PACIS, Singapore.",
+      "name": "Oh, S., Lee, S., & Baek, H. (2015). Reinvestigating the Relationship between Information Technology Capability and Firm Performance: Focusing on the Impact of the Adoption of Enterprise Systems. 19th PACIS, Singapore.",
       "publisher": "International Conference Proceedings",
       "releaseDate": "2015-01-01",
       "url": "",

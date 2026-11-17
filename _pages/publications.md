@@ -2,13 +2,14 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Full publication record from the curriculum vitae.
+description: Publication record updated from Google Scholar and publisher records.
 nav: true
 nav_order: 4
 ---
 
 {% assign international_journals = site.data.cv | where: "title", "International Journal Articles" | first %}
 {% assign domestic_journals = site.data.cv | where: "title", "Domestic Journal Articles" | first %}
+{% assign other_manuscripts = site.data.cv | where: "title", "Other Manuscripts" | first %}
 {% assign international_conferences = site.data.cv | where: "title", "International Conference Proceedings" | first %}
 {% assign domestic_conferences = site.data.cv | where: "title", "Domestic Conference Proceedings" | first %}
 {% assign books = site.data.cv | where: "title", "Books" | first %}
@@ -100,12 +101,13 @@ nav_order: 4
 }
 </style>
 
-<p class="pub-intro">The publication record is organized from the CV into international publications, domestic publications, conference proceedings and presentations, and books.</p>
+<p class="pub-intro">International and domestic publications, other manuscripts, conference proceedings and presentations, and books. Updated from <a href="https://scholar.google.com/citations?user=1Ps8qlcAAAAJ&amp;hl=en">Google Scholar</a> and publisher records on November 17, 2026.</p>
 
 <div class="pub-filter" aria-label="Publication filters">
   <button class="is-active" type="button" data-filter="all">All</button>
   <button type="button" data-filter="international">International</button>
   <button type="button" data-filter="domestic">Domestic</button>
+  <button type="button" data-filter="manuscripts">Other Manuscripts</button>
   <button type="button" data-filter="conference">Conference</button>
   <button type="button" data-filter="books">Books</button>
 </div>
@@ -123,6 +125,16 @@ nav_order: 4
   <h2>Domestic Publications <span class="pub-count">{{ domestic_journals.contents.size }}</span></h2>
   <div class="pub-list">
     {% for item in domestic_journals.contents %}
+      <article class="pub-item">{{ item | escape }}</article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="pub-section" data-pub-section="manuscripts">
+  <h2>Other Manuscripts <span class="pub-count">{{ other_manuscripts.contents.size }}</span></h2>
+  <p class="pub-intro">Journal details for these manuscripts are not listed in Google Scholar.</p>
+  <div class="pub-list">
+    {% for item in other_manuscripts.contents %}
       <article class="pub-item">{{ item | escape }}</article>
     {% endfor %}
   </div>
