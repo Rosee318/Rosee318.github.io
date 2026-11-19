@@ -1,221 +1,27 @@
 <!doctype html>
 <html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>금융상품 선택 화면</title>
-<style>
-:root{--bg:#f4f6f9;--card:#fff;--text:#172033;--muted:#6b7280;--line:#e5e7eb;--navy:#173a6b;--blue:#2868d7;--soft:#eef4ff;--warn:#fff7e8;--danger:#b42318;--green:#0f7b55}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Pretendard,"Noto Sans KR",Arial,sans-serif;background:var(--bg);color:var(--text)}
-button{font:inherit} .wrap{max-width:1180px;margin:0 auto;padding:24px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
-.brand{font-weight:800;font-size:20px;letter-spacing:-.3px}.sub{font-size:13px;color:var(--muted);margin-top:4px}
-.controls{display:flex;gap:8px;flex-wrap:wrap}.ghost,.primary{border-radius:10px;padding:10px 14px;border:1px solid var(--line);cursor:pointer;background:#fff;color:var(--text)}
-.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.ghost:hover{background:#f9fafb}
-.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px 8px;cursor:pointer;color:#475467;font-weight:700;font-size:13px}.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.shell{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px}.phone{background:#fff;border:1px solid var(--line);border-radius:18px;min-height:650px;overflow:hidden;box-shadow:0 8px 30px rgba(16,24,40,.06)}
-.appbar{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#fff}.appbar strong{font-size:17px}.badge{font-size:12px;background:var(--soft);color:var(--blue);padding:5px 8px;border-radius:999px}
-.screen{display:none;padding:22px}.screen.active{display:block}.eyebrow{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.04em;text-transform:uppercase}.screen h2{font-size:25px;line-height:1.3;margin:8px 0 8px}.lead{color:#667085;line-height:1.65;margin:0 0 22px}
-.card{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--card);margin:12px 0}.row{display:flex;justify-content:space-between;gap:14px;align-items:center}.name{font-weight:800;font-size:18px}.meta{font-size:13px;color:var(--muted);margin-top:5px}.rate{font-size:25px;font-weight:850;color:var(--navy)}
-.kv{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.kv div{background:#f8fafc;border-radius:10px;padding:10px}.kv small{display:block;color:#667085;margin-bottom:4px}.kv strong{font-size:14px}
-.btn{width:100%;border:0;border-radius:11px;background:var(--navy);color:#fff;padding:13px;cursor:pointer;font-weight:750}.btn.secondary{background:#fff;color:var(--navy);border:1px solid #b6c4d7}.btn.tiny{width:auto;padding:8px 11px;font-size:12px}
-.notice{padding:13px 14px;border-radius:12px;background:var(--soft);color:#244f91;font-size:13px;line-height:1.5;margin:12px 0}.toast{position:fixed;right:24px;bottom:24px;max-width:330px;background:#182230;color:#fff;padding:14px 16px;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.2);display:none;z-index:9}.toast.show{display:block}
-.question{font-size:21px;font-weight:800;line-height:1.5;margin:24px 0}.choicegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{padding:15px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;text-align:left;font-weight:700}.choice:hover{border-color:#9ab1d2}
-.featured{border:2px solid #2d6cdf;box-shadow:0 8px 28px rgba(45,108,223,.10);position:relative}.featured:before{content:"추천";position:absolute;top:-11px;left:18px;background:#2d6cdf;color:#fff;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800}.quiet{opacity:.66}.featured .btn{padding:16px;font-size:16px}.smallprint{font-size:10px;color:#9aa4b2;line-height:1.45}
-.hiddenbox{border-top:1px dashed var(--line);margin-top:12px;padding-top:12px;display:none;color:#475467;font-size:13px;line-height:1.65}.linkbtn{border:0;background:transparent;color:#667085;text-decoration:underline;cursor:pointer;padding:8px 0;font-size:12px}
-.compare-nav{display:flex;align-items:center;justify-content:space-between;margin:10px 0 4px}.dots{font-size:13px;color:#98a2b3}.disabled{opacity:.42;pointer-events:none}.comparetable{display:none;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:12px 0}.comparetable .r{display:grid;grid-template-columns:1.2fr 1fr 1fr;border-top:1px solid var(--line)}.comparetable .r:first-child{border-top:0}.comparetable div{padding:10px;font-size:12px}.comparetable .h{font-weight:800;background:#f8fafc}
-.social{display:flex;gap:10px;align-items:flex-start;background:#f0fdf8;border:1px solid #b7ead8;padding:12px;border-radius:12px;margin:12px 0}.social strong{color:var(--green)}.pulse{width:9px;height:9px;border-radius:50%;background:#18a874;margin-top:5px;box-shadow:0 0 0 5px rgba(24,168,116,.12)}
-.research{background:#111827;color:#e5e7eb;border-radius:18px;padding:16px;min-height:650px;display:none}.research.show{display:block}.research h3{margin:2px 0 10px;font-size:16px}.research p,.research li{font-size:12px;line-height:1.55;color:#c7d0dd}.note{background:#1f2937;border:1px solid #374151;border-radius:10px;padding:12px;margin-bottom:12px}.log{height:320px;overflow:auto;background:#0b1220;border-radius:10px;padding:10px;font-family:ui-monospace,Consolas,monospace;font-size:11px;color:#9fe4c7}.log div{padding:5px 0;border-bottom:1px solid #172033}.footer{font-size:11px;color:#98a2b3;text-align:center;margin-top:14px}
-@media(max-width:900px){.shell{grid-template-columns:1fr}.research{min-height:auto}.tabs{grid-template-columns:1fr 1fr}.top{align-items:flex-start;flex-direction:column}}@media(max-width:520px){.wrap{padding:12px}.screen{padding:16px}.choicegrid{grid-template-columns:1fr}.tabs{grid-template-columns:1fr}.kv{grid-template-columns:1fr 1fr}.screen h2{font-size:22px}}
-</style>
-</head>
-<body>
-<div class="wrap">
-  <div class="top">
-    <div><div class="brand">Morrow Finance</div><div class="sub">연구용 가상 금융상품 선택 화면 · 실제 금융서비스가 아닙니다.</div></div>
-    <div class="controls"><button class="ghost" id="researchToggle">연구자 모드</button><button class="ghost" id="resetBtn">초기화</button></div>
-  </div>
-
-  <div class="tabs">
-    <button class="tab active" data-id="s1">화면 1</button>
-    <button class="tab" data-id="s2">화면 2</button>
-    <button class="tab" data-id="s3">화면 3</button>
-    <button class="tab" data-id="s4">화면 4</button>
-    <button class="tab" data-id="s5">화면 5</button>
-  </div>
-
-  <div class="shell" id="shell">
-    <main class="phone">
-      <div class="appbar"><strong>상품 선택</strong><span class="badge">가상 시뮬레이션</span></div>
-
-      <section class="screen active" id="s1" data-note="속임수 질문: 부정어를 중첩하여 선택의 의미를 해석하기 어렵게 만든다.">
-        <div class="eyebrow">추가 서비스 설정</div>
-        <h2>해외주식 자동환전 서비스</h2>
-        <p class="lead">서비스 이용 여부를 선택해 주세요. 선택 후 다음 단계로 이동합니다.</p>
-        <div class="card">
-          <div class="name">서비스 신청 확인</div>
-          <div class="question">해외주식 자동환전 서비스 신청을 원하지 않지 않으신가요?</div>
-          <div class="choicegrid">
-            <button class="choice action" data-action="trick_yes">예, 원하지 않지 않습니다</button>
-            <button class="choice action" data-action="trick_no">아니요, 원하지 않습니다</button>
-          </div>
-          <p class="smallprint" style="margin-top:16px">선택 결과는 다음 화면에서 변경할 수 있습니다.</p>
-        </div>
-      </section>
-
-      <section class="screen" id="s2" data-note="잘못된 계층구조 + 감각조작: 플랫폼이 원하는 옵션을 크기·색·배치로 과도하게 강조하고, 상대 옵션의 가시성을 낮춘다.">
-        <div class="eyebrow">투자관리 플랜</div>
-        <h2>내게 맞는 관리 플랜을 선택하세요</h2>
-        <p class="lead">두 플랜 모두 언제든 해지할 수 있습니다.</p>
-        <div class="card featured">
-          <div class="row"><div><div class="name">Smart Plus</div><div class="meta">자동 포트폴리오 조정 · 월간 리포트</div></div><div class="rate">월 9,900원</div></div>
-          <div class="kv"><div><small>관리 방식</small><strong>자동 리밸런싱</strong></div><div><small>리포트</small><strong>매월 제공</strong></div></div>
-          <button class="btn action" data-action="hierarchy_plus">Smart Plus로 시작하기</button>
-          <div class="smallprint" style="margin-top:8px">일부 거래에는 별도 거래비용이 발생할 수 있습니다.</div>
-        </div>
-        <div class="card quiet">
-          <div class="row"><div><div class="name">Basic</div><div class="meta">직접 관리 · 기본 리포트</div></div><div><strong>월 0원</strong></div></div>
-          <button class="linkbtn action" data-action="hierarchy_basic">무료 Basic 선택</button>
-        </div>
-      </section>
-
-      <section class="screen" id="s3" data-note="숨겨진 정보: 핵심 비용·제약 조건을 기본 화면에서 숨기고, 별도 펼치기 동작을 해야만 확인할 수 있게 한다.">
-        <div class="eyebrow">고금리 저축</div>
-        <h2>Flex Save 5.2</h2>
-        <p class="lead">짧게 저축하고 우대금리 혜택을 받아보세요.</p>
-        <div class="card">
-          <div class="row"><div><div class="name">Flex Save 5.2</div><div class="meta">6개월 만기 · 자유적립</div></div><div class="rate">최대 연 5.2%</div></div>
-          <div class="kv"><div><small>기본금리</small><strong>연 2.1%</strong></div><div><small>우대금리</small><strong>최대 +3.1%p</strong></div></div>
-          <div class="notice">이번 달 신규 고객 우대금리 대상 상품입니다.</div>
-          <button class="btn action" data-action="hidden_join">이 상품 가입하기</button>
-          <button class="linkbtn" id="hiddenToggle">기타 상품 조건 보기</button>
-          <div class="hiddenbox" id="hiddenBox">
-            <strong>우대 및 해지 조건</strong><br>
-            우대금리는 매월 50만원 이상 자동이체 및 제휴카드 월 30만원 이상 이용 시 적용됩니다.<br>
-            중도해지 시 우대금리는 적용되지 않으며, 중도해지이율이 적용됩니다.<br>
-            제휴카드 연회비는 별도입니다.
-          </div>
-        </div>
-      </section>
-
-      <section class="screen" id="s4" data-note="가격비교 방해: 상품을 동시에 비교하지 못하게 하고 각 상품 정보를 순차적으로 확인하게 하여 조건 간 비교 비용을 높인다.">
-        <div class="eyebrow">대출상품 비교</div>
-        <h2>조건을 확인하고 하나를 선택하세요</h2>
-        <p class="lead">상품 세부조건은 카드별로 확인할 수 있습니다.</p>
-        <div class="compare-nav">
-          <button class="btn tiny secondary" id="prevProduct">이전 상품</button>
-          <span class="dots" id="productCount">1 / 2</span>
-          <button class="btn tiny secondary" id="nextProduct">다음 상품</button>
-        </div>
-        <div class="card" id="productA">
-          <div class="row"><div><div class="name">Loan A</div><div class="meta">원리금균등상환</div></div><div class="rate">연 4.8%</div></div>
-          <div class="kv"><div><small>취급수수료</small><strong>0원</strong></div><div><small>중도상환수수료</small><strong>0.6%</strong></div><div><small>대출기간</small><strong>36개월</strong></div><div><small>한도</small><strong>3,000만원</strong></div></div>
-          <button class="btn action" data-action="compare_A">Loan A 선택</button>
-        </div>
-        <div class="card" id="productB" style="display:none">
-          <div class="row"><div><div class="name">Loan B</div><div class="meta">원리금균등상환</div></div><div class="rate">연 4.5%</div></div>
-          <div class="kv"><div><small>취급수수료</small><strong>1.2%</strong></div><div><small>중도상환수수료</small><strong>0원</strong></div><div><small>대출기간</small><strong>36개월</strong></div><div><small>한도</small><strong>3,000만원</strong></div></div>
-          <button class="btn action" data-action="compare_B">Loan B 선택</button>
-        </div>
-        <button class="ghost disabled" style="width:100%;margin-top:10px">두 상품 한눈에 비교</button>
-      </section>
-
-      <section class="screen" id="s5" data-note="다른 소비자의 활동 알림: 타인의 선택·가입 활동을 사회적 단서로 제시하여 특정 상품 판단에 영향을 줄 수 있게 한다.">
-        <div class="eyebrow">투자상품 탐색</div>
-        <h2>오늘 많이 선택한 포트폴리오</h2>
-        <p class="lead">투자성향과 상품조건을 확인한 뒤 선택해 주세요.</p>
-        <div class="social"><span class="pulse"></span><div><strong>지금 327명이 Growth 60을 보고 있어요.</strong><br><span class="meta">최근 5분 동안 14명이 선택했습니다.</span></div></div>
-        <div class="card featured">
-          <div class="row"><div><div class="name">Growth 60</div><div class="meta">주식 60% · 채권 40%</div></div><div><strong>위험등급 3</strong></div></div>
-          <div class="kv"><div><small>총 보수</small><strong>연 0.82%</strong></div><div><small>권장 기간</small><strong>3년 이상</strong></div></div>
-          <button class="btn action" data-action="social_growth">Growth 60 선택</button>
-        </div>
-        <div class="card">
-          <div class="row"><div><div class="name">Balance 40</div><div class="meta">주식 40% · 채권 60%</div></div><div><strong>위험등급 4</strong></div></div>
-          <div class="kv"><div><small>총 보수</small><strong>연 0.48%</strong></div><div><small>권장 기간</small><strong>2년 이상</strong></div></div>
-          <button class="btn secondary action" data-action="social_balance">Balance 40 선택</button>
-        </div>
-      </section>
-    </main>
-
-    <aside class="research" id="research">
-      <h3>연구자 모드</h3>
-      <div class="note"><strong>현재 자극</strong><p id="noteText">속임수 질문: 부정어를 중첩하여 선택의 의미를 해석하기 어렵게 만든다.</p></div>
-      <div class="note"><strong>설계 메모</strong><p>참여자용 화면에서는 다크패턴 명칭을 노출하지 않습니다. 실제 연구에서는 통제조건을 별도로 제작하고, 상품의 객관적 조건은 조작 목적에 맞게 동일하게 관리해야 합니다.</p></div>
-      <h3>클릭 로그</h3>
-      <div class="log" id="log"></div>
-      <button class="ghost" id="clearLog" style="margin-top:10px">로그 지우기</button>
-    </aside>
-  </div>
-  <div class="footer">Prototype for academic research · 모든 브랜드와 금융상품은 가상입니다.</div>
-</div>
-<div class="toast" id="toast"></div>
-
-<script>
-(function(){
-  var tabs=[].slice.call(document.querySelectorAll('.tab'));
-  var screens=[].slice.call(document.querySelectorAll('.screen'));
-  var log=document.getElementById('log');
-  var toast=document.getElementById('toast');
-  var research=document.getElementById('research');
-  var noteText=document.getElementById('noteText');
-  var current='s1';
-  var product=0;
-
-  function stamp(){return new Date().toLocaleTimeString('ko-KR',{hour12:false});}
-  function addLog(type,detail){
-    var d=document.createElement('div');
-    d.textContent='['+stamp()+'] '+type+' · '+detail;
-    log.prepend(d);
-  }
-  function showToast(msg){
-    toast.textContent=msg;toast.classList.add('show');
-    setTimeout(function(){toast.classList.remove('show');},1800);
-  }
-  function showScreen(id){
-    current=id;
-    tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-id')===id);});
-    screens.forEach(function(s){s.classList.toggle('active',s.id===id);});
-    var active=document.getElementById(id);
-    noteText.textContent=active.getAttribute('data-note')||'';
-    addLog('screen_view',id);
-  }
-
-  tabs.forEach(function(t){t.addEventListener('click',function(){showScreen(t.getAttribute('data-id'));});});
-  [].slice.call(document.querySelectorAll('.action')).forEach(function(b){
-    b.addEventListener('click',function(){
-      var a=b.getAttribute('data-action');
-      addLog('choice',a);
-      showToast('선택이 기록되었습니다: '+b.textContent.trim());
-    });
-  });
-
-  document.getElementById('researchToggle').addEventListener('click',function(){
-    research.classList.toggle('show');
-    addLog('research_mode',research.classList.contains('show')?'on':'off');
-  });
-  document.getElementById('clearLog').addEventListener('click',function(){log.innerHTML='';});
-  document.getElementById('resetBtn').addEventListener('click',function(){
-    document.getElementById('hiddenBox').style.display='none';
-    product=0;renderProduct();showScreen('s1');log.innerHTML='';addLog('reset','all');
-  });
-  document.getElementById('hiddenToggle').addEventListener('click',function(){
-    var box=document.getElementById('hiddenBox');
-    var open=box.style.display==='block';
-    box.style.display=open?'none':'block';
-    addLog('hidden_terms',open?'close':'open');
-  });
-
-  function renderProduct(){
-    document.getElementById('productA').style.display=product===0?'block':'none';
-    document.getElementById('productB').style.display=product===1?'block':'none';
-    document.getElementById('productCount').textContent=(product+1)+' / 2';
-  }
-  document.getElementById('prevProduct').addEventListener('click',function(){product=Math.max(0,product-1);renderProduct();addLog('compare_nav','previous');});
-  document.getElementById('nextProduct').addEventListener('click',function(){product=Math.min(1,product+1);renderProduct();addLog('compare_nav','next');});
-
-  addLog('session_start','prototype');
-})();
-</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#132d53" />
+    <meta name="description" content="Morrow Finance 연구용 모바일 금융 의사결정 시뮬레이션" />
+    <title>Morrow · 나의 금융 시작하기</title>
+    <link rel="stylesheet" href="./app.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <button class="wordmark" data-action="home" aria-label="Morrow 시작 화면">
+          <span class="mark" aria-hidden="true">m</span>morrow<span class="header-meta">FINANCE</span>
+        </button>
+        <span class="status-chip">모의 체험</span>
+      </header>
+      <div id="progress" class="progress-wrap" aria-label="가입 진행 상황"></div>
+      <main id="screen" tabindex="-1"></main>
+      <footer id="navigation" class="bottom-bar"></footer>
+    </div>
+    <div id="dialog-root"></div>
+    <div id="announcer" class="sr-only" aria-live="polite"></div>
+  </body>
 </html>
