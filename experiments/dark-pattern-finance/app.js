@@ -1,9 +1,34 @@
 (() => {
   "use strict";
-  const VERSION = "2026-11-20.1";
-  const STORAGE_KEY = "moafit-finance-journey-v3";
+  const VERSION = "2026-11-21.1";
+  const STORAGE_KEY = "moafit-finance-journey-v4";
   const params = new URLSearchParams(location.search);
-  const panel = window.MoaPanelBridge.create({ config: window.MOA_PANEL_CONFIG, href: location.href });
+  let appReady = false;
+  let sync;
+  try {
+    sync = window.MoaSessionSync.create({
+      endpoint: window.MOA_PANEL_CONFIG.collectionUrl,
+      studyId: window.MOA_PANEL_CONFIG.studyId,
+      isTest: window.MOA_PANEL_CONFIG.testMode,
+      onStateChange: updateSaveStatus,
+    });
+  } catch (error) {
+    const message = document.createElement("p");
+    message.className = "return-error";
+    message.textContent = error.message || "기록 저장 기능을 불러오지 못했습니다. 다시 접속해 주세요.";
+    document.getElementById("screen").append(message);
+    return;
+  }
+  const panel = window.MoaPanelBridge.create({
+    config: window.MOA_PANEL_CONFIG,
+    href: location.href,
+    saveRecord: window.MOA_PANEL_CONFIG.collectionUrl
+      ? async (record) => {
+          const ack = await sync.flush(record);
+          return { ...ack, ok: ack.status === "saved" && ack.ackRevision >= record.revision };
+        }
+      : undefined,
+  });
   const requestedCondition = params.get("condition") === "neutral" ? "neutral" : "dark";
   const participantCode = panel.entry.mode ? panel.entry.panelId : (params.get("pid") || "").replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 48);
   const researcher = params.get("researcher") === "1";
@@ -36,11 +61,22 @@
   let redirectTimer;
   let returnGeneration = 0;
 
+  function sessionUuid() {
+    if (crypto.randomUUID) return crypto.randomUUID();
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 15) | 64;
+    bytes[8] = (bytes[8] & 63) | 128;
+    const hex = Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+  }
+
   function freshSession() {
     return {
-      schemaVersion: 3,
+      schemaVersion: 4,
       appVersion: VERSION,
-      sessionId: crypto.randomUUID ? crypto.randomUUID() : `mf-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+      sessionId: sessionUuid(),
+      revision: 0,
+      isTest: window.MOA_PANEL_CONFIG.testMode === true,
       participantCode,
       panel_id: panel.entry.mode ? panel.entry.panelId : null,
       studyId: panel.studyId,
@@ -49,6 +85,7 @@
       panelReturn: { state: "not_started", attempts: 0, returnedAt: null, receiptId: null },
       condition: requestedCondition,
       startedAt: new Date().toISOString(),
+      experienceStartedAt: null,
       completedAt: null,
       finalDecision: null,
       step: 1,
@@ -63,7 +100,7 @@
     try {
       const stored = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "null");
       return stored &&
-        stored.schemaVersion === 3 &&
+        stored.schemaVersion === 4 &&
         stored.appVersion === VERSION &&
         stored.condition === requestedCondition &&
         stored.participantCode === participantCode &&
@@ -89,7 +126,7 @@
       storageAvailable = false;
     }
   }
-  function log(action, value = null) {
+  function log(action, value = null, save = true) {
     if (!session) return;
     session.events.push({
       sequence: session.events.length + 1,
@@ -100,7 +137,49 @@
       at: new Date().toISOString(),
       elapsedMs: Math.max(0, Date.now() - pageEnteredAt),
     });
+    session.revision += 1;
     persist();
+    if (save) queueServerSave();
+  }
+
+  function queueServerSave() {
+    if (!session || panel.entry.error || !session.revision) return;
+    try {
+      sync.enqueue(exportRecord());
+    } catch (_) {
+      updateSaveStatus();
+    }
+  }
+
+  function updateSaveStatus() {
+    if (!appReady) return;
+    const element = document.getElementById("save-status");
+    if (!element) return;
+    if (!session) {
+      element.textContent = "";
+      element.classList.remove("save-status-error");
+      return;
+    }
+    const state = sync.state(session.sessionId);
+    const status =
+      state?.durable === false
+        ? "error"
+        : state?.status === "not_configured"
+          ? "not_configured"
+          : state?.error
+            ? "error"
+            : typeof state === "string"
+              ? state
+              : state?.status;
+    const labels = {
+      saved: "진행 내용이 저장되었습니다.",
+      saving: "진행 내용을 저장하고 있습니다.",
+      queued: "진행 내용을 저장하고 있습니다.",
+      error: "연결을 확인해 주세요. 전송할 기록을 보관 중입니다.",
+      not_configured: "서버 연결 전 시험입니다. 기록은 이 기기에 보관됩니다.",
+    };
+    element.textContent = state?.warning || labels[status] || "";
+    element.classList.toggle("save-status-error", status === "error");
   }
   function choose(key, value) {
     const previous = session.choices[key];
@@ -149,10 +228,11 @@
     const checked = session.choices[key] === value;
     return `<label class="choice${checked ? " selected" : ""}"><input type="radio" name="${key}" value="${value}" ${checked ? "checked" : ""}><span class="choice-content"><span class="choice-title">${title}</span><span class="choice-desc">${description}</span></span></label>`;
   }
-  function enterStep(index, reason = "navigate") {
+  function enterStep(index, reason = "navigate", save = true) {
     if (session) {
-      log("step_leave", { durationMs: Date.now() - pageEnteredAt, nextStep: index, reason });
-      session.totalMs += Math.max(0, Date.now() - pageEnteredAt);
+      const durationMs = Math.max(0, Date.now() - pageEnteredAt);
+      session.totalMs += durationMs;
+      log("step_leave", { durationMs, nextStep: index, reason }, save);
     }
     current = index;
     pageEnteredAt = Date.now();
@@ -209,10 +289,12 @@
           log("sensory_reminder", "맞춤 관리 reminder");
         }
       }, 9000);
+    updateSaveStatus();
   }
   function intro() {
-    footer(null, session ? "이어서 구성하기" : "금융 구성 시작하기", session ? "resume" : "start", !!panel.entry.error);
-    return `<div class="eyebrow">내 금융상품 고르기</div><h1>새로운 금융 생활,<br>나에게 맞게 시작해요.</h1><p class="lead">계좌부터 자금 마련과 관리까지.<br>선택한 설정으로 나만의 구성을 완성하세요.</p><div class="card featured"><span class="tag">오늘의 과제</span><h2>다음 달 이사를 준비하고 있어요.</h2><p>필요한 생활자금 <strong>300만원</strong>을 마련하고, 보유한 여윳돈 <strong>100만원</strong>을 관리할 구성을 선택해 주세요.</p><ul class="scenario-list"><li>대출이 필요하면 36개월 상환 조건을 비교해 주세요.</li><li>여윳돈은 6개월 저축하거나, 장기 투자 여부를 결정할 수 있어요.</li><li>매달 내는 비용과 상품 조건을 고려해 불필요한 서비스는 제외해 주세요.</li></ul></div><div class="notice blue"><strong>연구용 가상 체험입니다.</strong><p>상품·요금·이용자 알림은 사전에 정해진 모의 정보입니다. 실제 계좌 개설·대출·투자·결제는 발생하지 않습니다. 모든 선택은 변경하거나 마지막에 신청하지 않을 수 있습니다.</p></div><p class="small muted">${panel.entry.mode ? "체험이 끝나면 참여번호와 종료 상태를 원래 설문에 전달합니다. " : "진행 및 선택 기록은 이 브라우저 탭에 보관됩니다. 완료 후 결과 파일을 내려받을 수 있습니다. "}이름·연락처·실제 금융정보는 입력하지 않습니다.</p>${session ? '<div class="session-resume">진행 중인 구성이 있습니다.</div>' : ""}`;
+    const started = !!session?.experienceStartedAt;
+    footer(null, started ? "이어서 구성하기" : "금융 구성 시작하기", started ? "resume" : "start", !!panel.entry.error);
+    return `<div class="eyebrow">내 금융상품 고르기</div><h1>새로운 금융 생활,<br>나에게 맞게 시작해요.</h1><p class="lead">계좌부터 자금 마련과 관리까지.<br>선택한 설정으로 나만의 구성을 완성하세요.</p><div class="card featured"><span class="tag">오늘의 과제</span><h2>다음 달 이사를 준비하고 있어요.</h2><p>필요한 생활자금 <strong>300만원</strong>을 마련하고, 보유한 여윳돈 <strong>100만원</strong>을 관리할 구성을 선택해 주세요.</p><ul class="scenario-list"><li>대출이 필요하면 36개월 상환 조건을 비교해 주세요.</li><li>여윳돈은 6개월 저축하거나, 장기 투자 여부를 결정할 수 있어요.</li><li>매달 내는 비용과 상품 조건을 고려해 불필요한 서비스는 제외해 주세요.</li></ul></div><div class="notice blue"><strong>연구용 가상 체험입니다.</strong><p>상품·요금·이용자 알림은 사전에 정해진 모의 정보입니다. 실제 계좌 개설·대출·투자·결제는 발생하지 않습니다. 모든 선택은 변경하거나 마지막에 신청하지 않을 수 있습니다.</p></div><p class="small muted">${window.MOA_PANEL_CONFIG.collectionUrl ? "체험 중 선택한 항목과 누른 버튼, 화면별 이용 시간이 연구용 서버에 자동 저장됩니다." : "현재는 서버 연결 전 시험 단계입니다. 선택·행동 기록은 이 기기에 보관되며 서버에는 아직 전송되지 않습니다."} ${panel.entry.mode ? "체험이 끝나면 참여번호와 종료 상태를 설문에 전달합니다. " : ""}이름·연락처·실제 금융정보는 입력하지 않습니다.</p>${started ? '<div class="session-resume">진행 중인 구성이 있습니다.</div>' : ""}`;
   }
   function account(dark) {
     footer("이전", returningToReview ? "수정 완료" : "계좌 설정 계속", "next", !session.choices.account);
@@ -294,7 +376,7 @@
     navigation.innerHTML = "";
     if (panel.entry.mode) return panelComplete();
     const applied = session.finalDecision === "apply";
-    return `<div class="success-icon" aria-hidden="true">${applied ? "✓" : "—"}</div><div class="eyebrow">선택 완료</div><h1>${applied ? "모의 신청이<br>완료되었어요." : "이번에는<br>신청하지 않았어요."}</h1><p class="lead">${applied ? "아래 구성이 최종 선택으로 기록되었습니다." : "선택한 구성을 검토한 뒤 전체 신청을 보류한 것으로 기록되었습니다."}</p>${summaryRows(false)}${costSummary(applied ? "선택한 구성의 예상 월 비용" : "검토한 구성의 예상 비용")}<div class="notice blue"><strong>체험을 마쳤습니다.</strong><p>화면에는 선택을 어렵게 만드는 질문, 조건 숨김, 비교 방식, 기본 체크와 권유 표현이 포함될 수 있습니다. 표시된 이용자 활동은 모의 정보이며 실제 금융거래는 발생하지 않았습니다.</p></div><div class="stack"><button class="button primary wide" data-action="download-json">결과 자료 저장</button><button class="button secondary wide" data-action="download-csv">선택·행동 기록을 표로 저장</button><button class="text-button" data-action="restart">새 체험 시작하기</button></div><p class="small muted">결과는 서버로 전송되지 않습니다. 연구자에게 제출하려면 내려받은 파일을 전달해 주세요.${storageAvailable ? "" : " 브라우저 저장 공간을 사용할 수 없어 새로고침하면 기록이 사라질 수 있습니다."}</p>`;
+    return `<div class="success-icon" aria-hidden="true">${applied ? "✓" : "—"}</div><div class="eyebrow">선택 완료</div><h1>${applied ? "모의 신청이<br>완료되었어요." : "이번에는<br>신청하지 않았어요."}</h1><p class="lead">${applied ? "아래 구성이 최종 선택으로 기록되었습니다." : "선택한 구성을 검토한 뒤 전체 신청을 보류한 것으로 기록되었습니다."}</p>${summaryRows(false)}${costSummary(applied ? "선택한 구성의 예상 월 비용" : "검토한 구성의 예상 비용")}<div class="notice blue"><strong>체험을 마쳤습니다.</strong><p>화면에는 선택을 어렵게 만드는 질문, 조건 숨김, 비교 방식, 기본 체크와 권유 표현이 포함될 수 있습니다. 표시된 이용자 활동은 모의 정보이며 실제 금융거래는 발생하지 않았습니다.</p></div><div class="stack"><button class="button primary wide" data-action="download-json">결과 자료 저장</button><button class="button secondary wide" data-action="download-csv">선택·행동 기록을 표로 저장</button><button class="text-button" data-action="restart">새 체험 시작하기</button></div><p class="small muted">${window.MOA_PANEL_CONFIG.collectionUrl ? "선택·행동 기록은 연구용 서버에 자동 저장됩니다. 파일 저장은 별도의 사본을 보관하는 기능입니다." : "현재는 서버 연결 전 시험 단계이며, 기록은 이 기기에 보관됩니다. 필요한 기록은 파일로 저장할 수 있습니다."}${storageAvailable ? "" : " 브라우저 저장 공간을 사용할 수 없어 새로고침하면 기록이 사라질 수 있습니다."}</p>`;
   }
   function panelComplete() {
     const state = session.panelReturn;
@@ -337,7 +419,7 @@
       session.panelReturn.state = "ready";
       session.panelReturn.receiptId = result.receiptId;
       session.panelReturn.collection = result.collection;
-      log("panel_return_ready", { outcome: result.outcome, status: result.status, receiptId: result.receiptId });
+      log("panel_return_ready", { outcome: result.outcome, status: result.status, receiptId: result.receiptId }, false);
       render();
       redirectTimer = setTimeout(() => {
         if (session === activeSession && generation === returnGeneration) redirectToSurvey(result.url, activeSession);
@@ -345,7 +427,7 @@
     } catch (error) {
       if (session !== activeSession || generation !== returnGeneration) return;
       session.panelReturn.state = "failed";
-      log("panel_return_failed", { message: error.message });
+      log("panel_return_failed", { message: error.message }, false);
       render();
     } finally {
       if (generation === returnGeneration) panelReturnBusy = false;
@@ -356,8 +438,13 @@
     if (!session || session !== expectedSession || !session.panelOutcome || current !== 9) return;
     session.panelReturn.state = "returned";
     session.panelReturn.returnedAt = new Date().toISOString();
-    log("panel_redirect", { outcome: session.panelOutcome, status: session.panelStatus });
-    location.assign(url);
+    log("panel_redirect", { outcome: session.panelOutcome, status: session.panelStatus }, false);
+    const destination = new URL(url);
+    if (window.MOA_PANEL_CONFIG.testMode && destination.origin === location.origin && destination.pathname.endsWith("/panel-return.html")) {
+      destination.searchParams.set("session_id", session.sessionId);
+      if (session.panelReturn.receiptId) destination.searchParams.set("receipt_id", session.panelReturn.receiptId);
+    }
+    location.assign(destination.href);
   }
 
   function confirmPanelExit() {
@@ -371,11 +458,13 @@
     if (!panel.entry.mode || !panel.exitIsOut || panel.entry.error || session?.panelOutcome) return;
     if (!session) session = freshSession();
     session.panelOutcome = "out";
+    session.panelStatus = window.MOA_PANEL_CONFIG.outStatus;
     session.completedAt = new Date().toISOString();
     session.costSnapshot = costs();
-    log("panel_out", { reason: "participant_exit" });
+    log("panel_out", { reason: "participant_exit" }, false);
     closeDialog();
-    enterStep(9, "panel_out");
+    enterStep(9, "panel_out", false);
+    log("experience_end", { outcome: "out" });
     beginPanelReturn();
   }
   function exportRecord() {
@@ -457,12 +546,14 @@
   function finish(decision) {
     if (current !== 8 || session.finalDecision || session.panelOutcome || !["apply", "decline"].includes(decision)) return;
     session.finalDecision = decision;
-    session.panelOutcome = panel.entry.mode ? "complete" : null;
+    session.panelOutcome = "complete";
+    session.panelStatus = window.MOA_PANEL_CONFIG.completeStatus;
     session.completedAt = new Date().toISOString();
     session.costSnapshot = costs();
-    log("final_decision", { decision, choices: { ...session.choices }, costs: costs() });
+    log("final_decision", { decision, choices: { ...session.choices }, costs: costs() }, false);
     closeDialog();
-    enterStep(9, "complete");
+    enterStep(9, "complete", false);
+    log("experience_end", { outcome: "complete", decision });
     if (panel.entry.mode) beginPanelReturn();
   }
   function showResearch() {
@@ -502,9 +593,11 @@
       ["select", "next", "plan-continue", "edit", "back", "start", "resume"].includes(action)
     )
       return;
+    if (session && !session.panelOutcome && !session.finalDecision) log("ui_click", { action, label: button.textContent.trim().slice(0, 160) });
     if (action === "start") {
       if (panel.entry.error) return;
-      session = freshSession();
+      if (!session) session = freshSession();
+      session.experienceStartedAt = session.experienceStartedAt || new Date().toISOString();
       pageEnteredAt = Date.now();
       log("session_start", { condition: requestedCondition, participantCode: session.participantCode });
       enterStep(1, "start");
@@ -604,12 +697,20 @@
       }
     }
   });
+  appReady = true;
   if (session) log("session_resume", current);
+  else if (panel.entry.mode && !panel.entry.error) {
+    session = freshSession();
+    current = 0;
+    log("panel_entry", { isTest: session.isTest });
+    sync.flush(exportRecord()).catch(() => updateSaveStatus());
+  }
   addEventListener("pagehide", () => {
-    if (!session || current === 0 || current === 9) return;
+    if (!session || current === 9) return;
     const durationMs = Math.max(0, Date.now() - pageEnteredAt);
     session.totalMs += durationMs;
     log("page_leave", { durationMs });
+    sync.flush(exportRecord(), { keepalive: true }).catch(() => {});
     pageEnteredAt = Date.now();
   });
   addEventListener("pageshow", (event) => {
@@ -620,5 +721,8 @@
     }
   });
   render();
+  updateSaveStatus();
+  sync.retryPending().catch(() => updateSaveStatus());
+  addEventListener("online", () => sync.retryPending().catch(() => updateSaveStatus()));
   if (panel.entry.mode && current === 9 && session?.panelOutcome && session.panelReturn.state !== "returned") beginPanelReturn();
 })();

@@ -59,6 +59,7 @@
     function configurationError(outcome = "complete") {
       try {
         getRoute(outcome);
+        if (config.collectionRequired && !config.collectionUrl) return "기록 수집 서버가 아직 연결되지 않았습니다.";
         return "";
       } catch (error) {
         return error.message;
@@ -73,7 +74,23 @@
       if (inFlight.has(key)) return inFlight.get(key);
       const request = (async () => {
         const result = { receiptId: null, collection: "browser" };
-        if (config.collectionUrl) {
+        if (typeof options.saveRecord === "function") {
+          const confirmation = await options.saveRecord({ ...record, panelOutcome: outcome, panelStatus: target.status });
+          if (
+            confirmation?.ok !== true ||
+            typeof confirmation.receiptId !== "string" ||
+            !confirmation.receiptId ||
+            confirmation.sessionId !== record.sessionId ||
+            !Number.isSafeInteger(confirmation.ackRevision) ||
+            confirmation.ackRevision < record.revision ||
+            confirmation.panelOutcome !== outcome
+          ) {
+            throw new Error("종료 기록 저장을 확인하지 못했습니다. 다시 시도해 주세요.");
+          }
+          result.receiptId = confirmation.receiptId;
+          result.ackRevision = confirmation.ackRevision;
+          result.collection = "server";
+        } else if (config.collectionUrl) {
           const endpoint = trustedUrl(config.collectionUrl, "기록 수집 주소");
           if (endpoint.protocol !== "https:" && !["localhost", "127.0.0.1", "[::1]"].includes(endpoint.hostname))
             throw new Error("기록 수집 주소는 HTTPS를 사용해야 합니다.");

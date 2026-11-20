@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="referrer" content="no-referrer" />
+    <title>모아핏 · 설문 복귀 시험</title>
+    <link rel="stylesheet" href="./app.css" />
+    <script src="./panel-config.js" defer></script>
+    <script src="./panel-return.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="wordmark"><span class="mark" aria-hidden="true">ㅁ</span>모아핏</div>
+        <span class="status-chip">연동 시험</span>
+      </header>
+      <main id="screen">
+        <div class="eyebrow">임시 설문 복귀 페이지</div>
+        <h1 id="return-heading">전달 정보를 확인하고 있습니다.</h1>
+        <p class="lead">실제 엠브레인 설문이 아닌 연결 시험용 화면입니다.</p>
+        <div class="summary-list">
+          <div class="summary-row"><span class="summary-label">참여번호</span><strong class="summary-value" id="return-panel-id"></strong></div>
+          <div class="summary-row"><span class="summary-label">종료 상태</span><strong class="summary-value" id="return-outcome"></strong></div>
+          <div class="summary-row"><span class="summary-label">전달 코드</span><strong class="summary-value" id="return-code"></strong></div>
+          <div class="summary-row"><span class="summary-label">저장 확인</span><strong class="summary-value" id="return-receipt"></strong></div>
+        </div>
+        <div class="notice blue">
+          <strong>실제 조사 주소로 전송하지 않았습니다.</strong>
+          <p>엠브레인에서 운영용 복귀 주소와 상태 코드를 받으면, 체험 후 이 페이지 대신 해당 설문으로 이동하도록 변경합니다.</p>
+        </div>
+        <p id="return-error" class="return-error" hidden></p>
+        <p class="small muted">저장 확인 값은 연결 시험용 확인 번호입니다. 데이터 목록이나 다른 참가자의 기록은 이 화면에서 공개하지 않습니다.</p>
+      </main>
+    </div>
+  </body>
+</html>

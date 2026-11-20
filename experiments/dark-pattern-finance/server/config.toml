@@ -1,0 +1,2 @@
+[functions.moafit-collect]
+verify_jwt = false

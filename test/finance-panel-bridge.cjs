@@ -108,3 +108,61 @@ test("two simultaneous completion attempts share a single collector request", as
   assert.equal((await first).receiptId, "single-receipt");
   assert.equal((await second).receiptId, "single-receipt");
 });
+
+test("automatic session storage must acknowledge the final revision before survey return is ready", async () => {
+  const record = { ...makeRecord(), revision: 12 };
+  let submitted;
+  let release;
+  const bridge = api.create({
+    config: { ...config, collectionUrl: "https://collector.example.test/records", collectionRequired: true },
+    href: "https://app.example.test/?panel_id=P001",
+    saveRecord: (value) => {
+      submitted = value;
+      return new Promise((resolve) => {
+        release = resolve;
+      });
+    },
+  });
+  let ready = false;
+  const pending = bridge.submit(record, "complete").then((value) => {
+    ready = true;
+    return value;
+  });
+  await Promise.resolve();
+  assert.equal(ready, false);
+  assert.equal(submitted.panelOutcome, "complete");
+  assert.equal(submitted.panelStatus, "C_TEST");
+  assert.equal(submitted.finalDecision, "decline");
+  release({ ok: true, receiptId: "server-receipt", sessionId: record.sessionId, ackRevision: 12, panelOutcome: "complete" });
+  const result = await pending;
+  assert.equal(result.collection, "server");
+  assert.equal(result.ackRevision, 12);
+  assert.equal(result.receiptId, "server-receipt");
+});
+
+test("another session, stale revision or different outcome cannot authorize survey return", async () => {
+  const record = { ...makeRecord(), revision: 12 };
+  for (const invalid of [
+    { sessionId: "other-session" },
+    { ackRevision: 11 },
+    { ackRevision: undefined },
+    { ackRevision: "12" },
+    { panelOutcome: "out" },
+    { receiptId: "" },
+    { ok: false },
+  ]) {
+    const bridge = api.create({
+      config: { ...config, collectionUrl: "https://collector.example.test/records", collectionRequired: true },
+      href: "https://app.example.test/?panel_id=P001",
+      saveRecord: async () => ({
+        ok: true,
+        receiptId: "server-receipt",
+        sessionId: record.sessionId,
+        ackRevision: 12,
+        panelOutcome: "complete",
+        ...invalid,
+      }),
+    });
+    await assert.rejects(bridge.submit(record, "complete"));
+  }
+});

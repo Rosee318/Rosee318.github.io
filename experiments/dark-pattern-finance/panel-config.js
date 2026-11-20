@@ -1,13 +1,15 @@
-/* 운영 주소와 상태 코드는 엠브레인이 확정한 값만 입력합니다. 참가자 URL로 복귀 주소를 덮어쓰지 않습니다. */
+/* 현재는 자사 임시 복귀 페이지를 사용하는 시험 설정입니다. 운영 주소가 오면 이 설정을 교체합니다. */
 window.MOA_PANEL_CONFIG = Object.freeze({
-  enabled: false,
+  enabled: true,
+  testMode: true,
   studyId: "finance-decision-20261120",
-  completeReturnUrl: "",
-  outReturnUrl: "",
-  completeStatus: "",
-  outStatus: "",
-  exitIsOut: false,
+  completeReturnUrl: "https://saeromlee.kr/experiments/dark-pattern-finance/panel-return.html?mode=test",
+  outReturnUrl: "https://saeromlee.kr/experiments/dark-pattern-finance/panel-return.html?mode=test",
+  completeStatus: "TEMP_COMPLETE",
+  outStatus: "TEMP_OUT",
+  exitIsOut: true,
   redirectDelayMs: 1200,
   collectionUrl: "",
+  // 수집 서버 연결 후 collectionUrl을 입력하고 true로 전환합니다.
   collectionRequired: false,
 });

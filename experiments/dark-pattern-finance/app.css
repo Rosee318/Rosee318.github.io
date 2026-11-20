@@ -1219,6 +1219,21 @@ input[type="radio"] {
   }
 }
 
+.save-status {
+  padding: 8px 22px;
+  color: #52637b;
+  background: #f7f9fd;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.save-status:empty {
+  display: none;
+}
+.save-status-error {
+  color: #a63832;
+  background: #fff0ee;
+}
+
 @media print {
   html,
   body {

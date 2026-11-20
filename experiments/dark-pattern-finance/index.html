@@ -9,6 +9,7 @@
     <title>모아핏 · 나의 금융상품 선택하기</title>
     <link rel="stylesheet" href="./app.css" />
     <script src="./panel-config.js" defer></script>
+    <script src="./session-sync.js" defer></script>
     <script src="./panel-bridge.js" defer></script>
     <script src="./app.js" defer></script>
   </head>
@@ -21,6 +22,7 @@
         <span class="status-chip">모의 체험</span>
       </header>
       <div id="progress" class="progress-wrap" aria-label="가입 진행 상황"></div>
+      <div id="save-status" class="save-status" role="status" aria-live="polite"></div>
       <main id="screen" tabindex="-1"></main>
       <footer id="navigation" class="bottom-bar"></footer>
     </div>
