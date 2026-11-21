@@ -2,6 +2,7 @@ import { createHandler } from "./handler.mjs";
 
 const env = {
   SUPABASE_URL: Deno.env.get("SUPABASE_URL"),
+  SUPABASE_SECRET_KEYS: Deno.env.get("SUPABASE_SECRET_KEYS"),
   SUPABASE_SERVICE_ROLE_KEY: Deno.env.get("SUPABASE_SERVICE_ROLE_KEY"),
   MOA_STUDY_ID: Deno.env.get("MOA_STUDY_ID"),
   MOA_FORCE_TEST: Deno.env.get("MOA_FORCE_TEST"),

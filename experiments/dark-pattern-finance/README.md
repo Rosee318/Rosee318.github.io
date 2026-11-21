@@ -17,10 +17,10 @@
 - `server/`: Supabase 데이터베이스와 수집 함수의 배포 소스·검증·운영 안내
 - `app.js`: 단계별 문구, 상품 조건, 선택과 비용, 진행·기록·복구·복귀 화면
 
-현재 앱 버전은 `2026-11-21.1`, 진행 기록 형식은 `schemaVersion: 4`입니다. 사용자가 실제 운영 URL이 오기 전 임시 URL 시험과 **체험 중단의 아웃 처리**를 승인하여, `panel-config.js`는 `enabled: true`, `testMode: true`, `exitIsOut: true`로 설정되어 있습니다.
+현재 앱 버전은 `2026-11-21.2`, 진행 기록 형식은 `schemaVersion: 4`입니다. 사용자가 실제 운영 URL이 오기 전 임시 URL 시험과 **체험 중단의 아웃 처리**를 승인하여, `panel-config.js`는 `enabled: true`, `testMode: true`, `exitIsOut: true`로 설정되어 있습니다.
 
 - **임시 복귀 시험:** 같은 홈페이지의 `panel-return.html?mode=test`로 ID와 `TEMP_COMPLETE` 또는 `TEMP_OUT`을 전달합니다. 이는 실제 패널사의 완료·아웃 접수가 아닙니다.
-- **서버 자동 수집:** 클라이언트의 대기열·재시도·저장 확인 코드와 Supabase 서버 소스는 준비되어 있습니다. 현재 원격 수집 서버는 배포·연결되지 않았으며 `collectionUrl`은 빈 값, `collectionRequired`는 `false`입니다. 선택·행동 기록은 현재 기기에 보관되고 서버에 아직 자동 누적되지 않습니다.
+- **서버 자동 수집:** 서울 리전의 Supabase Free 프로젝트에 수집 함수를 배포했습니다. `collectionUrl`이 연결되어 있고 `collectionRequired: true`이므로, 선택·클릭·화면 이용 기록을 자동 저장하고 최종 기록 저장 확인 뒤에 복귀합니다. 현재 자료는 모두 시험 기록(`is_test: true`)으로 구분합니다.
 - **실제 조사 연동:** 패널사가 지정한 운영 복귀 주소·완료 코드·아웃 코드와 서버 연결을 확정하고 왕복 검증한 뒤 적용합니다. 소스 작성·로컬 테스트·임시 복귀 시험 통과와 실서비스 연동 완료를 구분합니다.
 
 ## 참가자와 연구자 URL
@@ -91,8 +91,8 @@
 | `outStatus`          | `TEMP_OUT`: 시험용 아웃 코드                                                        |
 | `exitIsOut`          | `true`: 확인을 거친 명시적 체험 중단을 아웃으로 처리                                |
 | `redirectDelayMs`    | `1200`: 준비 완료 후 복귀 이동까지 대기 시간(ms)                                    |
-| `collectionUrl`      | 빈 값: 원격 수집 서버 미연결                                                        |
-| `collectionRequired` | `false`: 서버 미연결 단계에서도 임시 복귀 시험 허용                                 |
+| `collectionUrl`      | `https://nwccyyusdztctpfrmszm.supabase.co/functions/v1/moafit-collect`              |
+| `collectionRequired` | `true`: 종료 기록의 서버 저장 확인 후 복귀                                          |
 
 임시 복귀 화면은 참여번호와 상태 코드를 확인하는 시험 화면입니다. 임시 페이지 도착이나 확인 문구만으로 서버 데이터 저장을 증명하지 않습니다. 원격 수집 서버를 연결하기 전에는 UI에서 기기 내 기록 보관 상태를 구분합니다.
 
@@ -143,9 +143,11 @@ JSON은 세션과 누적 이벤트를 보존합니다. CSV는 세션·선택·�
 
 ## 중앙 수집 서버 연결
 
-`server/`에는 Supabase용 데이터베이스 migration과 Edge Function이 있습니다. 자세한 배포·비밀값·권한·데이터 조회 방법은 [서버 README](server/README.md)를 따릅니다. 현재 계정 연결과 원격 배포가 완료되지 않았으므로 이 소스가 있다는 이유만으로 외부 참가자의 데이터가 서버에 수집되고 있다고 설명하면 안 됩니다.
+`server/`에는 Supabase용 데이터베이스 migration과 Edge Function이 있습니다. 자세한 배포·비밀값·권한·데이터 조회 방법은 [서버 README](server/README.md)를 따릅니다. 연결된 프로젝트는 [moafit-finance-research 관리 화면](https://supabase.com/dashboard/project/nwccyyusdztctpfrmszm)이며, 서울(`ap-northeast-2`) 리전·Free 플랜입니다. 프로젝트 생성 견적은 월 $0으로 확인했습니다. [공식 무료 한도](https://supabase.com/pricing)는 DB 500MB·Edge Function 월 50만 회이며, 1주 미사용 시 일시 정지될 수 있습니다.
 
-계정 연결 후 migration과 `moafit-collect` 함수를 배포하고 허용 origin을 확인합니다. 시험 기록을 POST하여 실제 비공개 테이블의 저장을 확인한 뒤, 발급된 HTTPS 함수 주소를 `panel-config.js`의 `collectionUrl`에 넣고 `collectionRequired: true`로 설정합니다. 함수의 GET 상태 확인만으로 저장 검증을 마치지 않습니다.
+Migration `20261121143030_create_moafit_collector`와 `moafit-collect` 함수를 배포했습니다. 원격 POST·중복 재시도·완료·부분 중단·충돌·허용되지 않은 origin을 검증하고 실제 비공개 테이블의 저장도 조회했습니다. 함수의 GET 상태 확인만으로 저장 검증을 마치지 않습니다. 시험 데이터는 `panel_id`가 `QA_`로 시작하므로 본 조사와 구분할 수 있습니다.
+
+실제 역할 권한 검사에서 `anon`·`authenticated`의 비공개 스키마·테이블·RPC 접근은 모두 차단됐고, `service_role`에는 보호된 RPC 실행만 허용되어 있습니다. 보안·성능 진단의 정보 항목은 비공개 테이블의 의도적인 기본 거부([RLS 정책 안내](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy))와 신규 조회 인덱스의 사용 이력 없음([인덱스 안내](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index))입니다.
 
 클라이언트는 세션 ID, 원문 패널 ID, 조사·조건·시험 구분, 양의 `revision`, 선택·비용·누적 이벤트와 세션별 임의 `writeToken`을 JSON으로 전송합니다. 동일 세션의 재시도는 같은 토큰과 갱신 번호를 사용합니다. 서버는 토큰 해시와 불변 필드를 검사하고 트랜잭션으로 갱신합니다. 이미 확인한 과거 요청이나 같은 본문의 재시도는 중복 이벤트·중복 세션을 만들지 않으며, 최종 상태를 과거 진행 상태로 되돌리지 않습니다. CORS는 발신 브라우저의 출처를 제한하며 패널 소속 자체를 인증하는 수단은 아닙니다.
 

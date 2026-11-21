@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const VERSION = "2026-11-21.1";
+  const VERSION = "2026-11-21.2";
   const STORAGE_KEY = "moafit-finance-journey-v4";
   const params = new URLSearchParams(location.search);
   let appReady = false;

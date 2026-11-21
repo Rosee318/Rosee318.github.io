@@ -72,11 +72,34 @@ async function hashToken(token, cryptoProvider) {
   return Array.from(new Uint8Array(bytes), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
+function serverCredentials(env) {
+  const raw = env.SUPABASE_SECRET_KEYS;
+  if (raw !== undefined && raw !== null) {
+    let keys;
+    try {
+      keys = JSON.parse(raw);
+    } catch (_) {
+      return null;
+    }
+    if (!keys || typeof keys !== "object" || Array.isArray(keys)) return null;
+    if (Object.prototype.hasOwnProperty.call(keys, "default")) {
+      const key = keys.default;
+      if (typeof key !== "string" || !/^sb_secret_[A-Za-z0-9_-]+$/.test(key)) return null;
+      return { apikey: key };
+    }
+  }
+  const key = env.SUPABASE_SERVICE_ROLE_KEY;
+  if (typeof key !== "string" || !key || /\s/.test(key)) return null;
+  // Opaque secret keys are not JWTs, including when supplied through a legacy variable.
+  return key.startsWith("sb_secret_") ? { apikey: key } : { apikey: key, Authorization: `Bearer ${key}` };
+}
+
 export function createHandler({ env, fetcher = globalThis.fetch, cryptoProvider = globalThis.crypto }) {
   const origins = configuredOrigins(env.MOA_ALLOWED_ORIGINS);
   const studyId = env.MOA_STUDY_ID || "finance-decision-20261120";
   const forceTest = env.MOA_FORCE_TEST !== "false";
   const allowLocalhost = env.MOA_ALLOW_LOCALHOST_QA === "true";
+  const credentials = serverCredentials(env);
 
   return async function handle(request) {
     const origin = request.headers.get("origin");
@@ -94,7 +117,7 @@ export function createHandler({ env, fetcher = globalThis.fetch, cryptoProvider 
     if (!allowed) return respond(403, { ok: false, error: "origin_not_allowed" });
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
     if (request.method !== "POST") return respond(405, { ok: false, error: "method_not_allowed" });
-    if (!env.SUPABASE_URL || !env.SUPABASE_SERVICE_ROLE_KEY) return respond(503, { ok: false, error: "collector_not_configured" });
+    if (!env.SUPABASE_URL || !credentials) return respond(503, { ok: false, error: "collector_not_configured" });
     try {
       const record = validatePayload(await readBoundedJson(request), { studyId, forceTest });
       const tokenHash = await hashToken(record.writeToken, cryptoProvider);
@@ -109,8 +132,7 @@ export function createHandler({ env, fetcher = globalThis.fetch, cryptoProvider 
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            apikey: env.SUPABASE_SERVICE_ROLE_KEY,
-            Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+            ...credentials,
           },
           body: JSON.stringify({ p_record: payload, p_token_hash: tokenHash }),
           signal: controller.signal,

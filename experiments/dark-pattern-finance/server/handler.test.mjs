@@ -96,7 +96,84 @@ test("only a SHA-256 hash goes to the database; headers and unknown metadata are
   assert.equal(sent.p_record.userAgent, undefined);
   assert.equal(sent.p_record.panel_id, "QA+&한글");
   assert.equal(rpc.headers.apikey, env.SUPABASE_SERVICE_ROLE_KEY);
+  assert.equal(rpc.headers.Authorization, `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`);
   assert.equal(response.headers.get("Cache-Control"), "no-store");
+});
+
+test("the default modern server secret takes precedence and is sent only as apikey", async () => {
+  const secret = "sb_secret_TEST_SERVER_KEY_NEVER_CLIENT";
+  let headers;
+  const response = await handler(
+    async (_, options) => {
+      headers = options.headers;
+      return reply();
+    },
+    { SUPABASE_SECRET_KEYS: JSON.stringify({ default: secret, other: "sb_secret_OTHER_TEST_KEY" }) }
+  )(request());
+  assert.equal(response.status, 200);
+  assert.equal(headers.apikey, secret);
+  assert.equal(Object.hasOwn(headers, "Authorization"), false);
+  assert.equal((await response.text()).includes(secret), false);
+});
+
+test("a modern secret works without a legacy server key", async () => {
+  const response = await handler(undefined, {
+    SUPABASE_SECRET_KEYS: JSON.stringify({ default: "sb_secret_TEST_SERVER_KEY_NEVER_CLIENT" }),
+    SUPABASE_SERVICE_ROLE_KEY: undefined,
+  })(request());
+  assert.equal(response.status, 200);
+});
+
+test("a valid dictionary without a default may fall back to the legacy server key", async () => {
+  let headers;
+  const response = await handler(
+    async (_, options) => {
+      headers = options.headers;
+      return reply();
+    },
+    { SUPABASE_SECRET_KEYS: JSON.stringify({ secondary: "sb_secret_OTHER_TEST_KEY" }) }
+  )(request());
+  assert.equal(response.status, 200);
+  assert.equal(headers.apikey, env.SUPABASE_SERVICE_ROLE_KEY);
+});
+
+test("malformed modern key configuration fails closed even when a legacy key exists", async () => {
+  let calls = 0;
+  const fetcher = async () => {
+    calls++;
+    return reply();
+  };
+  for (const raw of [
+    "",
+    "{",
+    "null",
+    "[]",
+    JSON.stringify("sb_secret_TEST_SERVER_KEY_NEVER_CLIENT"),
+    JSON.stringify({ default: null }),
+    JSON.stringify({ default: "" }),
+    JSON.stringify({ default: "sb_secret_" }),
+    JSON.stringify({ default: "sb_publishable_TEST_KEY" }),
+    JSON.stringify({ default: "sb_secret_TEST_KEY\n" }),
+    JSON.stringify({ default: 123 }),
+  ]) {
+    const response = await handler(fetcher, { SUPABASE_SECRET_KEYS: raw })(request());
+    assert.equal(response.status, 503);
+    assert.deepEqual(await response.json(), { ok: false, error: "collector_not_configured" });
+  }
+  assert.equal(calls, 0);
+});
+
+test("an opaque secret in the legacy variable is never sent as a Bearer JWT", async () => {
+  let headers;
+  const response = await handler(
+    async (_, options) => {
+      headers = options.headers;
+      return reply();
+    },
+    { SUPABASE_SERVICE_ROLE_KEY: "sb_secret_TEST_SERVER_KEY_NEVER_CLIENT" }
+  )(request());
+  assert.equal(response.status, 200);
+  assert.equal(Object.hasOwn(headers, "Authorization"), false);
 });
 
 test("server errors are classified without echoing database details", async () => {

@@ -9,7 +9,6 @@ window.MOA_PANEL_CONFIG = Object.freeze({
   outStatus: "TEMP_OUT",
   exitIsOut: true,
   redirectDelayMs: 1200,
-  collectionUrl: "",
-  // 수집 서버 연결 후 collectionUrl을 입력하고 true로 전환합니다.
-  collectionRequired: false,
+  collectionUrl: "https://nwccyyusdztctpfrmszm.supabase.co/functions/v1/moafit-collect",
+  collectionRequired: true,
 });

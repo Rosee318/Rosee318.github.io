@@ -24,13 +24,16 @@ Edge Function 배포 도구에는 다음 값을 사용합니다.
 | 이름                        | 기본값 / 의미                                                                    |
 | --------------------------- | -------------------------------------------------------------------------------- |
 | `SUPABASE_URL`              | Supabase 서버 환경이 제공하는 프로젝트 URL                                       |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase 서버 환경에서만 읽는 관리자 키. 브라우저에 전달하지 않음                |
+| `SUPABASE_SECRET_KEYS`      | Supabase가 주입하는 JSON 객체의 `default` secret 키를 우선 사용. 서버 전용       |
+| `SUPABASE_SERVICE_ROLE_KEY` | 신규 기본 키가 없을 때 사용하는 기존 서버 키. 브라우저에 전달하지 않음           |
 | `MOA_STUDY_ID`              | `finance-decision-20261120`                                                      |
 | `MOA_FORCE_TEST`            | 기본 `true`. 정확히 `false`일 때만 운영 데이터로 분류                            |
 | `MOA_ALLOWED_ORIGINS`       | `https://saeromlee.kr,https://www.saeromlee.kr`                                  |
 | `MOA_ALLOW_LOCALHOST_QA`    | 기본 `false`. `true`면 HTTP localhost, 127.0.0.1, IPv6 loopback의 로컬 검증 허용 |
 
 `MOA_ALLOWED_ORIGINS`는 경로·끝 슬래시가 없는 HTTPS origin을 쉼표로 구분합니다. OPTIONS 요청에 해당 origin의 CORS 헤더를 반환하며 와일드카드나 쿠키 인증을 쓰지 않습니다. [CORS 처리](https://supabase.com/docs/guides/functions/cors)와 [서버 비밀값](https://supabase.com/docs/guides/functions/secrets)을 참고합니다.
+
+`SUPABASE_SECRET_KEYS`의 `default`가 `sb_secret_...` 키이면 RPC 요청의 `apikey` 헤더로만 보냅니다. 새 secret 키는 JWT가 아니므로 `Authorization: Bearer`에 넣지 않습니다. 신규 환경변수가 없거나 유효한 JSON 객체에 `default` 항목이 없을 때만 기존 서버 키로 대체합니다. 잘못된 JSON, 객체가 아닌 값, 빈 값이나 잘못된 형식의 `default`는 기존 키가 있어도 저장을 차단하고 503을 반환합니다. 키 값은 응답이나 로그에 출력하지 않습니다. [API 키의 호환성](https://supabase.com/docs/guides/getting-started/api-keys#known-limitations-and-compatibility-differences)을 따릅니다.
 
 클라이언트의 `isTest` 값과 관계없이 서버가 시험/운영 구분을 결정합니다. 현재 임시 복귀 페이지를 사용하는 동안은 `MOA_FORCE_TEST=true`, 클라이언트 `testMode:true`로 유지합니다. 운영 전환 시 실제 엠브레인 복귀 URL·상태 코드, `MOA_FORCE_TEST=false`, 클라이언트 `testMode:false`를 함께 적용하고 새 세션으로 확인합니다. 기존 시험 세션의 분류를 운영으로 바꾸지 않습니다.
 
